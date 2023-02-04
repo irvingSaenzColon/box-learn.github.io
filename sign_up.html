@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style-sign_up.css">
+</head>
+<body>
+    <form class="form" autocomplete="off">
+        <section>
+            <div class="form__input">
+                <label class="form__placeholder" for="name">Nombre</label>
+                <input id="name" type="text" autocomplete="off">
+            </div>
+            <div class="form__input-group">
+                <div class="form__input form__input--half">
+                    <label for="lastname-p">Apellido Paterno</label>
+                    <input id="lastname-p" type="text" autocomplete="off">
+                </div>
+                <div class="form__input form__input--half">
+                    <label for="lastname-m">Apellido Materno</label>
+                    <input id="lastname-m" type="text" autocomplete="off">
+                </div>
+            </div>
+            <label for="">Género</label>
+            <div class="form__input-radios">
+                <label for="">
+                    <input type="radio">
+                    <span>Hombre</span>
+                </label>
+                <label for="">
+                    <input type="radio">
+                    <span>Mujer</span>
+                </label>
+                
+                <label for="">
+                    <input type="radio">
+                    <span>Otro</span>
+                </label>
+            </div>
+            <div class="form__input">
+                <label for="birthdate">Fecha de Nacimiento</label>
+                <input id="birthdate" type="date" autocomplete="off">
+            </div>
+        </section>
+        <section>
+            <div class="form__input">
+                <label for="">Correo electrónico</label>
+                <input type="email">
+            </div>
+            <div class="form__input">
+                <label for="">Contraseña</label>
+                <input type="text">
+            </div>
+            <div class="form__input">
+                <label for="">Confirmar contraseña</label>
+                <input type="text">
+            </div>
+        </section>
+        
+        
+        <img src="" alt="represents avatar of user">
+        <label for="profile-image">Elegir foto</label>
+        <input id="profile-image" type="file">
+        
+        
+        <button class="form__button form__button--primary">Registrar</button>
+    </form>
+
+    <section>
+        <p>¿Ya tienes una cuenta?</p>
+        <a href="./sign_in.html">Inicia Sesión aquí</a>
+    </section>
+</body>
+</html>

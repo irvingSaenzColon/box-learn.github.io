@@ -1,0 +1,142 @@
+:root{
+    --right-black-fogra-39: #030906;
+    --right-black-fogra-38: #0C0F0C;
+    --eerie-black:          #181B18;
+    --carbon:               #929292;
+    --davys-grey:           #505250;
+    --cultured:             #F8F7F8;
+    --white:                #FCFBFC;
+    --red-munsell:          #FF0044; 
+
+    --border-sm: 4px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: var(--right-black-fogra-39);
+}
+
+img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 50%;
+
+    background-color: var(--right-black-fogra-38);
+}
+
+section{
+    text-align: center;
+    color: var(--cultured);
+}
+
+section>a{
+    text-decoration: none;
+    color: var(--red-munsell);
+}
+
+.form{
+    padding: 8px 16px;
+    width: 100%;
+    max-width: 350px;
+    margin: 24px auto;
+    font-size: 1.5rem;
+    
+}
+
+.form>button{
+    cursor: pointer;
+    display: block;
+    padding: 8px 16px;
+    border-radius: var(--border-sm);
+    font-size: 1.5rem;
+}
+
+.form__input-group{
+    display: flex;
+    gap: 10px;
+}
+
+.form__input-radios{
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--carbon);
+}
+
+.form__input{
+    width: 100%;
+    position: relative;
+    border: 1px solid var(--eerie-black);
+    border-radius: var(--border-sm);
+    overflow: hidden;
+    margin: 16px 0;
+    color: var(--davys-grey);
+}
+
+.form__input:hover{ 
+    cursor: text;
+    border: 1px solid var(--davys-grey);
+}
+
+.form__input--half{
+    width: 50%;
+}
+.form__input>label{
+    cursor: text;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    display: block;
+    width: fit-content;
+    
+}
+.form__input>input:not([type='radio']){
+    display: block;
+    padding: 8px 16px;
+    border: none;
+    width: 100%;
+    color: var(--carbon);
+    background-color: var(--eerie-black);
+}
+
+.form__input>input:focus{
+    outline: none;
+    color: var(--white);
+}
+
+.form__placeholder{
+    font-size: 1.4rem;
+}
+
+.form__button{
+    width: 100%;
+    max-width: 250px;
+    margin: 24px auto;
+}
+
+.form__button--primary{
+    font-weight: 700;
+    border: 1px solid var(--red-munsell);
+    color: var(--right-black-fogra-39);
+    background-color: var(--red-munsell);
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.form__button--primary:hover{
+    color: var(--red-munsell);
+    background-color: var(--right-black-fogra-39);
+}
