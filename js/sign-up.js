@@ -19,7 +19,14 @@ function onLoad(event){
     });
 
     [...inputs].forEach(function(input){
-        input.addEventListener('keydown', onTabInput);
+        if(input.getAttribute('type') !== 'checkbox' && input.getAttribute('type') !== 'file')
+            input.addEventListener('keydown', onTabInput);
+        else if(input.getAttribute('type') === 'file'){
+            input.addEventListener('change', onSelectImage);
+        }
+        else{
+            input.addEventListener('click', onShowPassword);
+        }
     });
 
     [...buttons_page].forEach(function(button){
@@ -31,9 +38,17 @@ function onLoad(event){
 // Submit functions
 function onSignup(event){
     event.preventDefault();
-    console.log('Hola');
-    // Validate each input
-    // Prepare formData to request something
+    const profile_image = document.getElementById('profile-img');
+    const base_64_regexp = /^data:image\/([A-z])+;base64,/;
+    let base_64_image = '';
+    if(base_64_regexp.test(profile_image.src)){
+        base_64_image = profile_image.src;
+    }
+    else{
+        base_64_image = getBase64Image( profile_image );
+    }
+
+    // Prepare formData to send a request and sign up
 }
 
 // Click functions
@@ -93,7 +108,22 @@ function onClickPage(event){
     }
 }
 
-// Tab functions
+function onShowPassword(event){
+    const password = document.querySelector('form.form input[name = "password"]');
+    const c_password = document.querySelector('form.form input[name = "c-password"]')
+
+    if(event.target.checked){
+        password.setAttribute('type', 'text');
+        c_password.setAttribute('type', 'text');
+    }
+    else{
+        password.setAttribute('type', 'password');
+        c_password.setAttribute('type', 'password');
+    }
+    
+}
+
+// Keydown functions
 function onTabInput(event){
     
     const key = event.keyCode ? event.keyCode : event.which;
@@ -115,6 +145,24 @@ function onTabInput(event){
     }
 }
 
+// Change funcions
+function onSelectImage(event){
+    const input_file = event.target;
+    const file =  input_file.files[0];
+
+    if(FileReader && file){
+        console.log('Hola');
+        let fileReader = new FileReader();
+        fileReader.onload = function(){
+            document.getElementById('profile-img').src = fileReader.result;
+        }
+        fileReader.readAsDataURL(file);
+    }
+    else{
+        console.error('Sorry, this functionality is not supported by your browser');
+    }
+}
+
 // Create HTML Elements
 function createParagraph(innerText){
     const p = document.createElement('p');
@@ -127,11 +175,15 @@ function createParagraph(innerText){
 function cleanPlaceholders(placeholderArray){
     placeholderArray.forEach(function(div){
         const placeholder = div.querySelector('label');
-
-        if(div.classList.contains('form__input--focus')){
+        const input = div.querySelector('input');
+        
+        if(div.classList.contains('form__input--focus') && !input.value.length){
             div.classList.remove('form__input--focus');
 
             placeholderIn(placeholder, 250);
+        }
+        else{
+            div.classList.remove('form__input--focus');
         }
             
     });
@@ -300,7 +352,7 @@ function validate(input, pattern, message){
     let error_check = 0;
     const parent = input.closest('div');
 
-    if(pattern.test(value)){
+    if(!pattern.test(value)){
         error_message = message;
         error_check = 1;
     }
@@ -310,18 +362,55 @@ function validate(input, pattern, message){
     }
 
     if(error_check){
+        
         const p = createParagraph(error_message);
         p.classList.add('error');
 
-        console.log(parent.nextElementSibling);
-
         if(parent.nextElementSibling?.tagName !== 'P')
             parent.insertAdjacentElement('afterend', p);
+        else
+            parent.nextElementSibling.innerText = error_message;
 
         return error_check;
     }
 
-    if(parent.nextElementSibling.tagName === 'P'){
+    if(parent.nextElementSibling?.tagName === 'P'){
+        parent.nextElementSibling.remove();
+    }
+
+    return 0;
+}
+
+function compareValues(myInput, inputToCompare, message){
+    let original_value = myInput.value;
+    let compare_value = inputToCompare.value;
+    let error_message = '';
+    let error_check = 0;
+    const parent = myInput.closest('div');
+
+    if(original_value !== compare_value){
+        error_message = message;
+        error_check = 1;
+    }
+    else if(original_value.trim().length === 0){
+        error_message = 'Debe llenar el campo';
+        error_check = 1;
+    }
+
+    if(error_check){
+        
+        const p = createParagraph(error_message);
+        p.classList.add('error');
+
+        if(parent.nextElementSibling?.tagName !== 'P')
+            parent.insertAdjacentElement('afterend', p);
+        else
+            parent.nextElementSibling.innerText = error_message;
+
+        return error_check;
+    }
+    
+    if(parent.nextElementSibling?.tagName === 'P'){
         parent.nextElementSibling.remove();
     }
 
@@ -330,21 +419,24 @@ function validate(input, pattern, message){
 
 function validateArray(inputArrays){
     const pattern_text = /^([A-Za-z])+([ ])*([A-Z-a-z])+$/;
-    const pattern_date = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+    const pattern_date = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/;
     const pattern_email =  /^([a-z]+([.a-z]+)?)+(\+[a-z]+)?@[a-z]+(\.[a-z]+)?\.([a-z]+)$/;
     const pattern_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\(¡”#$%&;/=’?¡¿:;,.\-_+*{\][}\])]).{8,}$/;
     let valid = 0;
 
-    inputArrays.forEach(function(input){
+    inputArrays.forEach(function(input, index){
 
-        if(input.getAttribute('type') === 'text'){
+        if(input.getAttribute('type') === 'text' && (input.name !== 'password' && input.name !== 'c-password') ){
             valid += validate(input, pattern_text, 'El campo debe contener solamente letras');
         }
         else if(input.getAttribute('type') === 'date'){
             valid += validate(input, pattern_date, 'Ingrese una fecha válida');
         }
-        else if(input.getAttribute('type') === 'password'){
+        else if((input.getAttribute('type') === 'password' || input.getAttribute('type') === 'text') && input.name === "password" ){
             valid += validate(input, pattern_password, 'La contraseña debe contener una mayuscula, una minuscula y ocho caracteres');
+        }
+        else if((input.getAttribute('type') === 'password' || input.getAttribute('type') === 'text') && input.name === "c-password"){
+            valid += compareValues(input, inputArrays[ index - 1], 'La contraseña debe coincidir');
         }
         else if(input.getAttribute('type') === 'email'){
             valid += validate(input, pattern_email, 'Debe ingresar un correo electrónico válido');
@@ -353,4 +445,24 @@ function validateArray(inputArrays){
     });
 
     return valid;
+}
+
+// base64 functions
+function getBase64Image(img){
+    const canvas = document.createElement('canvas');
+
+    let ext = img.src.match(/\.[A-Za-z]*$/i)[0].replace('.','');
+
+    if(ext === 'jpg')
+        ext = 'jpeg';
+
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+
+    const canvas_context = canvas.getContext('2d');
+    canvas_context.drawImage(img, 0, 0);
+
+    const dataURL = canvas.toDataURL(`image/${ext}`);
+
+    return dataURL;
 }

@@ -1,4 +1,12 @@
-//04/02/2023
+//04/02/2023 - 05/02/2023
 1.-que el usuario pueda elegir imagen y que se muestre en el img.                   --hecho
 2.-dividir los tabs.                                                                --hecho
-3.-validar por tab, que no pueda avanzar hasta que lo que escriba esté correcto.    --en progreso
+3.-validar por tab, que no pueda avanzar hasta que lo que escriba esté correcto.    --hecho
+    3.1.- Validar que el campo de confirmar la contraseña sea igual a 
+          el campo de la contraseña
+    3.2.- cuando haga check en el checkbox de mostrar contraseña, que se vean las
+          contraseñas.
+    3.3.- Cuando se haga submit, verificar si el input file tiene elementos, si no
+          no tiene elementos, crear un default a partir del image src que tiene por
+          default.
+    3.4.- Cargar una imagen de un input file.

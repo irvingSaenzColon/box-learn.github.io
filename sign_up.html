@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/style-sign_up.css">
 </head>
 <body>
-    <form class="form" autocomplete="do-not-autofill">
+    <form class="form" autocomplete="off">
         <h1>Crea tu cuenta de Learn Box</h1>
         <!-- Section for personal data -->        
         <section data-active="true">
@@ -67,11 +67,11 @@
             </div>
             <div class="form__input" tabindex="5">
                 <label class="form__placeholder" for="password">Contraseña</label>
-                <input id="password" type="password" autocomplete="do-not-autofill">
+                <input id="password" type="password" name="password" autocomplete="do-not-autofill">
             </div>
             <div class="form__input" tabindex="6">
                 <label class="form__placeholder" for="c-password">Confirmar contraseña</label>
-                <input id="c-password" type="password" autocomplete="do-not-autofill">
+                <input id="c-password" type="password" name="c-password" autocomplete="do-not-autofill">
             </div>
             
             <label class="form__input-check" for="see-password">
@@ -84,7 +84,7 @@
         <!-- Section to select profile image -->
         <section class="inactive" data-active="false">
             <h2>Imagen de perfil</h2>
-            <img class="form__image" src="./assets/images/147144.png" alt="Represents avatar of user">
+            <img id="profile-img" class="form__image" src="./assets/images/147144.png" alt="Represents avatar of user">
             <label class="form__button form__button--primary" for="profile-image">Elige una imagen de perfil</label>
             <input id="profile-image" name="image" type="file">
         </section>
