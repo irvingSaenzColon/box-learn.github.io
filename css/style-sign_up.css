@@ -6,7 +6,10 @@
     --davys-grey:           #505250;
     --cultured:             #F8F7F8;
     --white:                #FCFBFC;
-    --red-munsell:          #FF0044; 
+    --red-munsell:          #FF0044;
+    --upsdell-red:          #B10F2E;
+    --cyan-process:         #06BEE1;
+    --true-blue:            #3467B3; 
 
     --border-sm: 4px;
 }
@@ -26,6 +29,21 @@ body{
     background-color: var(--right-black-fogra-39);
 }
 
+h1, h2, h3{
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+h1{
+    margin-bottom: 24px;
+    color: var(--red-munsell);
+}
+
+h2{
+    margin-bottom: 12px;
+    font-size: 2.0rem;
+}
+
 img{
     display: block;
     object-fit: cover;
@@ -39,13 +57,37 @@ img{
 }
 
 section{
+    width: 100%;
     text-align: center;
     color: var(--cultured);
+}
+
+section:last-of-type{
+    margin-bottom: 24px;
+}
+
+section>p, section>a{
+    font-size: 1.5rem;
 }
 
 section>a{
     text-decoration: none;
     color: var(--red-munsell);
+}
+section>p{
+    text-decoration: none;
+    color: var(--cultured);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    appearance: none;
+    background-image: none;
+    -webkit-text-fill-color: var(--carbon) !important;
+    -webkit-background-clip: text;
+    background-color: var(--right-black-fogra-39) !important;
 }
 
 .form{
@@ -53,8 +95,21 @@ section>a{
     width: 100%;
     max-width: 350px;
     margin: 24px auto;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     
+    overflow: hidden;
+}
+
+.form>section>label{
+    text-align: left;
+}
+
+.form>label{
+    text-align: left;
+}
+
+.form>section>input[type='file']{
+    visibility: hidden;
 }
 
 .form>button{
@@ -72,7 +127,7 @@ section>a{
 
 .form__input-radios{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     color: var(--carbon);
 }
 
@@ -81,35 +136,85 @@ section>a{
     position: relative;
     border: 1px solid var(--eerie-black);
     border-radius: var(--border-sm);
-    overflow: hidden;
     margin: 16px 0;
     color: var(--davys-grey);
+}
+
+section>.form__input:last-of-type{
+    margin-bottom: 24px;
 }
 
 .form__input:hover{ 
     cursor: text;
     border: 1px solid var(--davys-grey);
 }
+.form__input--focus{
+    outline: 2px solid var(--red-munsell);
+}
+.form__input--focus>label{
+    color: var(--red-munsell);
+}
 
 .form__input--half{
     width: 50%;
 }
+
 .form__input>label{
     cursor: text;
     position: absolute;
-    top: 9px;
+    top: 11px;
     left: 10px;
     display: block;
-    width: fit-content;
-    
+    width: fit-content;   
 }
-.form__input>input:not([type='radio']){
+
+.form__input>input:not([type='radio']):not([type='checkbox']){
     display: block;
-    padding: 8px 16px;
+    padding: 10px 16px;
     border: none;
     width: 100%;
+    font-size: 1.6rem;
     color: var(--carbon);
-    background-color: var(--eerie-black);
+    background-color: var(--right-black-fogra-39);
+}
+
+.form__label{
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form__input-check{
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.form__input-check>input{
+    visibility: hidden;
+}
+
+.form__input-check>div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--davys-grey);
+    border-radius: var(--border-sm);
+    background-color: transparent;
+
+    transition: background-color 0.25s ease;
+}
+
+.form__input-check>input:checked ~ div{
+    border: 2px solid var(--red-munsell);
+    background-color: var(--red-munsell);
+}
+
+.form__input-check>span{
+    margin-left: 16px;
+    color: var(--carbon);
 }
 
 .form__input>input:focus{
@@ -119,12 +224,133 @@ section>a{
 
 .form__placeholder{
     font-size: 1.4rem;
+    border-radius: var(--border-sm);
+    padding: 0 4px;
+    background-color: var(--right-black-fogra-39);
+}
+
+.form__placeholder--out{
+    animation-name: label-out;
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__placeholder--in{
+    animation-name: label-in;
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__radio{
+    position: relative;
+}
+
+.form__radio>div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border: 2px solid var(--carbon);
+    border-radius: 50%;
+
+    background-color: transparent;
+}
+
+.form__radio>div>span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+
+    transition: background-color 0.25s ease;
+}
+
+.form__radio>input{
+    visibility: hidden;
+}
+
+.form__radio>span{
+    margin-left: 10px;
+}
+
+.form__radio>input:checked ~ div>span{
+    background-color: var(--red-munsell);
+    opacity: 1;
+}
+.form__radio>input:checked ~ div{
+    border: 2px solid var(--red-munsell);
+}
+
+
+.form__page{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__page--one{
+    justify-content: end;
+}
+
+.form__page--out-left{
+    animation-name: page-out-left;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__page--out-right{
+    animation-name: page-out-right;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__page--in-right{
+    animation-name: page-in-right;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__page--in-left{
+    animation-name: page-in-left;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
 }
 
 .form__button{
+    cursor: pointer;
+    display: block;
     width: 100%;
     max-width: 250px;
+    padding: 8px 16px;
     margin: 24px auto;
+    border-radius: var(--border-sm);
+}
+
+.form__button--fade-in{
+    animation-name: button-fade-in;
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__button--fade-out{
+    animation-name: button-fade-out;
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__button--half{
+    width: max-content;
+    margin: 0;
 }
 
 .form__button--primary{
@@ -139,4 +365,116 @@ section>a{
 .form__button--primary:hover{
     color: var(--red-munsell);
     background-color: var(--right-black-fogra-39);
+}
+
+.form__button--secondary{
+    font-weight: 700;
+    border: 1px solid var(--upsdell-red);
+    color: var(--right-black-fogra-39);
+    background-color: var(--upsdell-red);
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.form__button--secondary:hover{
+    color: var(--upsdell-red);
+    background-color: var(--right-black-fogra-39);
+}
+
+/* Generic clases */
+
+.inactive{
+    display: none;
+}
+
+.error{
+    margin-top: -16px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--red-munsell);
+}
+
+/* Animations */
+@keyframes label-out {
+    0%{
+        transform: translate(0, 0);
+    }
+    100%{
+        transform: translate(-5px, -22px);
+        font-size: 1.2rem;
+        background-color: var(--right-black-fogra-39);
+    }
+}
+
+@keyframes label-in {
+    0%{
+        transform: translate(-5px, -22px);
+        background-color: var(--right-black-fogra-39);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes page-out-left {
+    0%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes page-in-left {
+    0%{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes page-out-right {
+    0%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes page-in-right {
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes button-fade-out {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes button-fade-in {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }

@@ -1,0 +1,4 @@
+//04/02/2023
+1.-que el usuario pueda elegir imagen y que se muestre en el img.                   --hecho
+2.-dividir los tabs.                                                                --hecho
+3.-validar por tab, que no pueda avanzar hasta que lo que escriba esté correcto.    --en progreso
