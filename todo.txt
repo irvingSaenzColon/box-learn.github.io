@@ -10,3 +10,8 @@
           no tiene elementos, crear un default a partir del image src que tiene por
           default.
     3.4.- Cargar una imagen de un input file.
+
+
+//08/02/2023
+1.- Lograr avisar que debe ingresar la contraseña si el campo está vacío            --hecho
+
