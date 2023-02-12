@@ -1,16 +1,27 @@
 :root{
-    --right-black-fogra-39: #030906;
-    --right-black-fogra-38: #0C0F0C;
-    --eerie-black:          #181B18;
-    --carbon:               #929292;
-    --davys-grey:           #505250;
-    --cultured:             #F8F7F8;
-    --white:                #FCFBFC;
-    --red-munsell:          #FF0044;
-    --upsdell-red:          #B10F2E;
-    --cyan-process:         #06BEE1;
-    --true-blue:            #3467B3; 
+    /* Background of page */
+    --eclipse:              #272425;
+    --live:                 #554C51;
+    /* Titles or important texts */
+    --dr-white:             #FAFAFA;
+    /* Special messages and elements */
+    --butternut-squash:     #FC7703;
+    /* Secondary  */
+    --butternut-squash-dark:#cf6508;
+    /* Secondary stuff */
+    --flood:                #657ED4;
 
+    /* for labels */
+    --mattherhorn:          #302b2e;
+    /* for inputs */
+    --ultimate-grey:        #ABABAB;
+    /* for a nav */
+    --dire-wolf:            #2C2428;
+    /* for a course card */
+    --dire-wolf-dark:       #2C2428;
+
+
+    /* Borders */
     --border-sm: 4px;
 }
 
@@ -22,21 +33,22 @@
 
 html{
     font-size: 62.5%;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 body{
-    background-color: var(--right-black-fogra-39);
+    background-color: var(--eclipse);
 }
 
 h1, h2, h3{
-    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
     text-align: left;
+    color: var(--dr-white);
 }
 
 h1{
     margin-bottom: 24px;
-    color: var(--red-munsell);
+    color: var(--butternut-squash);
 }
 
 h2{
@@ -72,11 +84,12 @@ section>p, section>a{
 
 section>a{
     text-decoration: none;
-    color: var(--red-munsell);
+    font-weight: 700;
+    color: var(--butternut-squash);
 }
 section>p{
     text-decoration: none;
-    color: var(--cultured);
+    color: var(--dr-white);
 }
 
 input:-webkit-autofill,
@@ -85,9 +98,9 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
     appearance: none;
     background-image: none;
-    -webkit-text-fill-color: var(--carbon) !important;
+    -webkit-text-fill-color: var(--ultimate-grey) !important;
     -webkit-background-clip: text;
-    background-color: var(--right-black-fogra-39) !important;
+    background-color: var(--mattherhorn) !important;
 }
 
 .form{
@@ -128,7 +141,7 @@ input:-webkit-autofill:active{
 .form__input-radios{
     display: flex;
     justify-content: space-between;
-    color: var(--carbon);
+    color: var(--ultimate-grey);
 }
 
 .form__input{
@@ -137,7 +150,8 @@ input:-webkit-autofill:active{
     border: 1px solid var(--eerie-black);
     border-radius: var(--border-sm);
     margin: 16px 0;
-    color: var(--davys-grey);
+    color: var(--ultimate-grey);
+    background-color: var(--mattherhorn);
 }
 
 section>.form__input:last-of-type{
@@ -149,10 +163,10 @@ section>.form__input:last-of-type{
     border: 1px solid var(--davys-grey);
 }
 .form__input--focus{
-    outline: 2px solid var(--red-munsell);
+    outline: 2px solid var(--butternut-squash);
 }
 .form__input--focus>label{
-    color: var(--red-munsell);
+    color: var(--butternut-squash);
 }
 
 .form__input--half{
@@ -165,7 +179,8 @@ section>.form__input:last-of-type{
     top: 11px;
     left: 10px;
     display: block;
-    width: fit-content;   
+    width: fit-content;
+    background-color: var(--mattherhorn);   
 }
 
 .form__input>input:not([type='radio']):not([type='checkbox']){
@@ -181,6 +196,7 @@ section>.form__input:last-of-type{
 .form__label{
     display: block;
     margin-bottom: 8px;
+    color: var(--ultimate-grey);
 }
 
 .form__input-check{
@@ -200,7 +216,7 @@ section>.form__input:last-of-type{
     left: 0;
     width: 20px;
     height: 20px;
-    border: 2px solid var(--davys-grey);
+    border: 2px solid var(--ultimate-grey);
     border-radius: var(--border-sm);
     background-color: transparent;
 
@@ -208,13 +224,13 @@ section>.form__input:last-of-type{
 }
 
 .form__input-check>input:checked ~ div{
-    border: 2px solid var(--red-munsell);
-    background-color: var(--red-munsell);
+    border: 2px solid var(--butternut-squash);
+    background-color: var(--butternut-squash);
 }
 
 .form__input-check>span{
     margin-left: 16px;
-    color: var(--carbon);
+    color: var(--ultimate-grey);
 }
 
 .form__input>input:focus{
@@ -254,7 +270,7 @@ section>.form__input:last-of-type{
     width: 20px;
     height: 20px;
     padding: 3px;
-    border: 2px solid var(--carbon);
+    border: 2px solid var(--ultimate-grey);
     border-radius: 50%;
 
     background-color: transparent;
@@ -279,11 +295,11 @@ section>.form__input:last-of-type{
 }
 
 .form__radio>input:checked ~ div>span{
-    background-color: var(--red-munsell);
+    background-color: var(--butternut-squash);
     opacity: 1;
 }
 .form__radio>input:checked ~ div{
-    border: 2px solid var(--red-munsell);
+    border: 2px solid var(--butternut-squash);
 }
 
 
@@ -355,30 +371,30 @@ section>.form__input:last-of-type{
 
 .form__button--primary{
     font-weight: 700;
-    border: 1px solid var(--red-munsell);
-    color: var(--right-black-fogra-39);
-    background-color: var(--red-munsell);
+    border: 1px solid var(--butternut-squash);
+    color: var(--eclipse);
+    background-color: var(--butternut-squash);
 
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .form__button--primary:hover{
-    color: var(--red-munsell);
-    background-color: var(--right-black-fogra-39);
+    color: var(--butternut-squash);
+    background-color: var(--eclipse);
 }
 
 .form__button--secondary{
     font-weight: 700;
-    border: 1px solid var(--upsdell-red);
-    color: var(--right-black-fogra-39);
-    background-color: var(--upsdell-red);
+    border: 1px solid var(--butternut-squash-dark);
+    color: var(--eclipse);
+    background-color: var(--butternut-squash-dark);
 
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .form__button--secondary:hover{
-    color: var(--upsdell-red);
-    background-color: var(--right-black-fogra-39);
+    color: var(--butternut-squash-dark);
+    background-color: var(--eclipse);
 }
 
 /* Generic clases */
@@ -389,9 +405,10 @@ section>.form__input:last-of-type{
 
 .error{
     margin-top: -16px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 300;
-    color: var(--red-munsell);
+    text-align: left;
+    color: var(--flood);
 }
 
 /* Animations */
@@ -402,7 +419,6 @@ section>.form__input:last-of-type{
     100%{
         transform: translate(-5px, -22px);
         font-size: 1.2rem;
-        background-color: var(--right-black-fogra-39);
     }
 }
 

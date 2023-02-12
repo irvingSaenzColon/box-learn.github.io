@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style-sign_in.css">
     <title>Inicio de Sesión</title>
 </head>
 <body>
-    <h1>Learn Box</h1>
-    <h2>Inicio de Sesión</h2>
-    <h3>Ingresa para descubrir los mejores cursos para tu futuro</h3>
+    <header>
+        <h1>Fox Bite</h1>
+        <img src="./assets/icons/fox-face.svg" alt="">
+        <h2>Inicio de Sesión</h2>
+        <h3>Ingresa para descubrir los mejores cursos para tu futuro</h3>
+    </header>
+    
     <form class="form">
         <div class="form__input">
             <label class="form__placeholder" for="email">Correo electrónico</label>
-            <input id="email" type="email">
+            <input id="email" type="email" >
         </div>
         <div class="form__input">
-            <label form__placeholder for="password">Contraseña</label>
-            <input id="password" type="password">
+            <label class="form__placeholder" for="password">Contraseña</label>
+            <input id="password" type="password" autocomplete="off">
         </div>
         <button class="form__button form__button--primary">Iniciar Sesión</button>
     </form>

@@ -1,17 +1,28 @@
 :root{
-    --right-black-fogra-39: #030906;
-    --right-black-fogra-38: #0C0F0C;
-    --eerie-black:          #181B18;
-    --carbon:               #929292;
-    --davys-grey:           #505250;
-    --cultured:             #F8F7F8;
-    --white:                #FCFBFC;
-    --red-munsell:          #FF0044;
-    --upsdell-red:          #B10F2E;
-    --cyan-process:         #06BEE1;
-    --true-blue:            #3467B3; 
+   /* Background of page */
+   --eclipse:              #272425;
+   --live:                 #554C51;
+   /* Titles or important texts */
+   --dr-white:             #FAFAFA;
+   /* Special messages and elements */
+   --butternut-squash:     #FC7703;
+   /* Secondary  */
+   --butternut-squash-dark:#cf6508;
+   /* Secondary stuff */
+   --flood:                #657ED4;
 
-    --border-sm: 4px;
+   /* for labels */
+   --mattherhorn:          #302b2e;
+   /* for inputs */
+   --ultimate-grey:        #ABABAB;
+   /* for a nav */
+   --dire-wolf:            #2C2428;
+   /* for a course card */
+   --dire-wolf-dark:       #2C2428;
+
+
+   /* Borders */
+   --border-sm: 4px;
 }
 
 *{
@@ -22,7 +33,7 @@
 
 html{
     font-size: 62.5%;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 body{
@@ -31,37 +42,43 @@ body{
     justify-content: center;
     align-items: center;
     padding: 8px 16px;
-    background-color: var(--right-black-fogra-39);
+    background-color: var(--eclipse);
+}
+
+header{
+    text-align: center;
 }
 
 h1, h2, h3{
-    font-family: 'Roboto', sans-serif;
     text-align: left;
+    font-weight: 700;
 }
 
 h1{
     width: 100%;
-    max-width: 600px;
+    max-width: 350px;
     margin:0 auto 24px;
     font-size: 3.2rem;
-    color: var(--red-munsell);
+    font-weight: 900;
+    color: var(--butternut-squash);
 }
 
 h2{
     margin-bottom: 12px;
     font-size: 2.4rem;
-    color: var(--cultured);
+    color: var(--dr-white);
 }
 h3{
+    max-width: 350px;
     margin-bottom: 12px;
     font-size: 1.8rem;
-    color: var(--davys-grey);
+    color: var(--ultimate-grey);
 }
 
 section{
     width: 100%;
     text-align: center;
-    color: var(--cultured);
+    color: var(--ultimate-grey);
 }
 
 section:last-of-type{
@@ -74,11 +91,11 @@ section>p, section>a{
 
 section>a{
     text-decoration: none;
-    color: var(--red-munsell);
+    color: var(--butternut-squash);
 }
 section>p{
     text-decoration: none;
-    color: var(--cultured);
+    color: var(--ultimate-grey);
 }
 
 input:-webkit-autofill,
@@ -87,9 +104,9 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
     appearance: none;
     background-image: none;
-    -webkit-text-fill-color: var(--carbon) !important;
+    -webkit-text-fill-color: var(--ultimate-grey) !important;
     -webkit-background-clip: text;
-    background-color: var(--right-black-fogra-39) !important;
+    background-color: var(--mattherhorn) !important;
 }
 
 .form{
@@ -130,16 +147,17 @@ input:-webkit-autofill:active{
 .form__input-radios{
     display: flex;
     justify-content: space-between;
-    color: var(--carbon);
+    color: var(--ultimate-grey);
 }
 
 .form__input{
     width: 100%;
     position: relative;
-    border: 1px solid var(--eerie-black);
+    border: 1px solid var(--eclipse);
     border-radius: var(--border-sm);
     margin: 32px 0;
-    color: var(--davys-grey);
+    color: var(--ultimate-grey);
+    background-color: var(--mattherhorn);
 }
 
 section>.form__input:last-of-type{
@@ -148,13 +166,13 @@ section>.form__input:last-of-type{
 
 .form__input:hover{ 
     cursor: text;
-    border: 1px solid var(--davys-grey);
+    border: 1px solid var(--ultimate-grey);
 }
 .form__input--focus{
-    outline: 2px solid var(--red-munsell);
+    outline: 2px solid var(--butternut-squash);
 }
 .form__input--focus>label{
-    color: var(--red-munsell);
+    color: var(--butternut-squash);
 }
 
 .form__input--half{
@@ -168,6 +186,7 @@ section>.form__input:last-of-type{
     left: 10px;
     display: block;
     width: fit-content;   
+    background-color: var(--mattherhorn);
 }
 
 .form__input>input:not([type='radio']):not([type='checkbox']){
@@ -175,9 +194,9 @@ section>.form__input:last-of-type{
     padding: 10px 16px;
     border: none;
     width: 100%;
-    font-size: 1.6rem;
-    color: var(--carbon);
-    background-color: var(--right-black-fogra-39);
+    font-size: 1.5rem;
+    color: var(--ultimate-grey);
+    background-color: var(--mattherhorn);
 }
 
 .form__label{
@@ -202,7 +221,7 @@ section>.form__input:last-of-type{
     left: 0;
     width: 20px;
     height: 20px;
-    border: 2px solid var(--davys-grey);
+    border: 2px solid var(--ultimate-grey);
     border-radius: var(--border-sm);
     background-color: transparent;
 
@@ -210,25 +229,25 @@ section>.form__input:last-of-type{
 }
 
 .form__input-check>input:checked ~ div{
-    border: 2px solid var(--red-munsell);
-    background-color: var(--red-munsell);
+    border: 2px solid var(--butternut-squash);
+    background-color: var(--butternut-squash);
 }
 
 .form__input-check>span{
     margin-left: 16px;
-    color: var(--carbon);
+    color: var(--ultimate-grey);
 }
 
 .form__input>input:focus{
     outline: none;
-    color: var(--white);
+    color: var(--dr-white);
 }
 
 .form__placeholder{
     font-size: 1.4rem;
     border-radius: var(--border-sm);
     padding: 0 4px;
-    background-color: var(--right-black-fogra-39);
+    background-color: var(--mattherhorn);
 }
 
 .form__placeholder--out{
@@ -257,23 +276,24 @@ section>.form__input:last-of-type{
 
 .form__button--primary{
     font-weight: 700;
-    border: 1px solid var(--red-munsell);
-    color: var(--right-black-fogra-39);
-    background-color: var(--red-munsell);
+    border: 1px solid var(--butternut-squash);
+    color: var(--eclipse);
+    background-color: var(--butternut-squash);
 
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .form__button--primary:hover{
-    color: var(--red-munsell);
-    background-color: var(--right-black-fogra-39);
+    color: var(--butternut-squash);
+    background-color: var(--eclipse);
 }
 
 .error{
     margin-top: -16px;
     font-size: 1.2rem;
     font-weight: 300;
-    color: var(--red-munsell);
+    text-align: left;
+    color: var(--butternut-squash);
 }
 
 /* Animations */
@@ -284,14 +304,12 @@ section>.form__input:last-of-type{
     100%{
         transform: translate(-5px, -22px);
         font-size: 1.2rem;
-        background-color: var(--right-black-fogra-39);
     }
 }
 
 @keyframes label-in {
     0%{
         transform: translate(-5px, -22px);
-        background-color: var(--right-black-fogra-39);
     }
     100%{
         transform: translate(0, 0);
