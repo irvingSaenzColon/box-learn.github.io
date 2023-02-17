@@ -15,3 +15,6 @@
 //08/02/2023
 1.- Lograr avisar que debe ingresar la contraseña si el campo está vacío            --hecho
 
+//01/02/2023
+Cosas que faltaron pot hacer:
+1.- Hacer para escritorio la ventana del video del curso 
