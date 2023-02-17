@@ -38,6 +38,7 @@ function onBodyClick(event){
 
 // Focus Functions
 function onFocusInput(event){
+    console.log('Esto es por focus')
     const input = event.target.closest('div');
     const label = input.querySelector('label');
     const real_input = input.querySelector('input'); 
