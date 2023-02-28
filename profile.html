@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style-profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <header class="profile-information">
+        <figure class="profile-information__image">
+            <img src="./assets/images/147144.png" alt="">
+            <figcaption>
+                <p>Nickname</p>
+                <p>User Name</p>
+            </figcaption>
+        </figure>
+        <section>
+            <p class="profile-information__group__status">I love programming and chipotle</p>
+            <p class="profile-information__group">
+                <img src="./assets/images/male.png" alt="">
+                <span>Gender</span>
+            </p>
+            <p class="profile-information__group"> 
+                <img src="./assets/images/cake.png" alt="">
+                <span>24/06/1997</span>
+            </p>
+            <p class="profile-information__group">
+                <img src="./assets/images/mail.png" alt="">
+                <span>mary.example@gmail.com</span>
+            </p>
+        </section>
+    </header>
+    <main id="student-stats" class="inactive">
+        <h2 class="main-title">My Stats</h2>
+        <section id="student-options" class="button-grid">
+            <button class="button-grid__button button-grid__button--flood">
+                <img src="./assets/images/graph.png" alt="">
+                Progress
+            </button>
+            <button class="button-grid__button button-grid__button--fantasy-romance">
+                <img src="./assets/images/trophy.png" alt="">
+                Completed Courses
+            </button>
+            <button class="button-grid__button button-grid__button--hokkaido-lavander">
+                <img src="./assets/images/clock.png" alt="">
+                Hours Studied
+            </button>
+            <button class="button-grid__button button-grid__button--poisonous-potion">
+                <img src="./assets/images/book.png" alt="">
+                All Courses
+            </button>
+        </section>
+        <section class="inactive container" data-container-type="progress">
+            <div class="heading-section heading-section--no-justify">
+                <button class="heading-section__button-no-bg" data-backwards="true">
+                    <img src="./assets/images/left-arrow.png" alt="">
+                </button>
+                <h2>Progress</h2>
+            </div>
+            <article class="progress-item">
+                <p>HTML Course</p>
+                <div>
+                    <span>5%</span>
+                    <span></span>
+                </div>
+            </article>
+            <article class="progress-item">
+                <p>CSS Course</p>
+                <div>
+                    <span>5%</span>
+                    <span></span>
+                </div>
+            </article>
+            <article class="progress-item">
+                <p>Async Await JS</p>
+                <div>
+                    <span>5%</span>
+                    <span></span>
+                </div>
+            </article>
+            <article class="progress-item">
+                <p>Introduction to Javascript</p>
+                <div>
+                    <span>5%</span>
+                    <span></span>
+                </div>
+            </article>
+        </section>
+        <section class="inactive container" data-container-type="completed courses">
+            <div class="heading-section heading-section--no-justify">
+                <button class="heading-section__button-no-bg" data-backwards="true">
+                    <img src="./assets/images/left-arrow.png" alt="">
+                </button>
+                <h2>Completed Courses</h2>
+            </div>
+            <article class="course-completed">
+                <p>HTML Course</p>
+                <a href="./search_category.html" class="course-completed__category">Frontend</a>
+                <small class="course-completed__inscription">17/06/2006</small>
+            </article>
+            <article class="course-completed">
+                <p>Introduction to Web Development</p>
+                <a href="./search_category.html" class="course-completed__category">Frontend</a>
+                <small class="course-completed__inscription">17/06/2006</small>
+            </article>
+            <article class="course-completed">
+                <p>Introduction to SQL</p>
+                <a href="./search_category.html" class="course-completed__category">Backend</a>
+                <small class="course-completed__inscription">17/06/2006</small>
+            </article>
+            <article class="course-completed">
+                <p>Basic API Rest</p>
+                <a href="./search_category.html" class="course-completed__category">Backend</a>
+                <small class="course-completed__inscription">17/06/2006</small>
+            </article>
+        </section>
+        <section class="inactive container" data-container-type="hours studied">
+            <div class="heading-section heading-section--no-justify">
+                <button class="heading-section__button-no-bg" data-backwards="true">
+                    <img src="./assets/images/left-arrow.png" alt="">
+                </button>
+                <h2>Hours Studied</h2>
+            </div>
+            <canvas id="canvas"></canvas>
+        </section>
+        <section class="inactive container" data-container-type="all courses">
+            <div class="heading-section heading-section--no-justify">
+                    <button class="heading-section__button-no-bg" data-backwards="true">
+                        <img src="./assets/images/left-arrow.png" alt="">
+                    </button>
+                    <h2>All Courses</h2>
+            </div>
+            <div class="heading-section">
+                <label for="">Filtered By</label>
+                <select class="form__input" name="" id="">
+                    <option value="">All</option>
+                    <option value="">Name</option>
+                    <option value="">Category</option>
+                    <option value="">Latest</option>
+                    <option value="">Completed</option>
+                    <option value="">Actives</option>
+                </select>
+            </div>
+            <article class="course-completed">
+                <p>HTML Course</p>
+                <a href="./search_category.html" class="course-completed__category">Frontend</a>
+                <small class="course-completed__inscription">Inscription: 17/05/2017</small>
+                <small class="course-completed__finished">Finished: 14/09/2022</small>
+            </article>
+            <article class="course-completed">
+                <p>CSS Course</p>
+                <a href="./search_category.html" class="course-completed__category">Frontend</a>
+                <small class="course-completed__inscription">Inscription: 17/05/2017</small>
+                <small class="course-completed__finished">Finished: 14/09/2022</small>
+            </article>
+            <article class="course-completed">
+                <p>Introduction to JavaScript</p>
+                <a href="./search_category.html" class="course-completed__category">Frontend</a>
+                <small class="course-completed__inscription">Inscription: 17/05/2017</small>
+                <small class="course-completed__finished">Finished: 14/09/2022</small>
+            </article>
+            <article class="course-completed">
+                <p>Stored Procedures MySQL</p>
+                <a href="./search_category.html" class="course-completed__category">Backend</a>
+                <small class="course-completed__inscription">Inscription: 17/05/2017</small>
+                <small class="course-completed__finished">Finished: 14/09/2022</small>
+            </article>
+        </section>
+    </main>
+    <main id="teacher-stats">
+        <h2 class="main-title">Options</h2>
+        <section id="teacher-options" class="button-grid">
+            <button class="button-grid__button button-grid__button--flood">
+                <img src="./assets/images/graph.png" alt="">
+                My Stats
+            </button>
+            <button class="button-grid__button button-grid__button--poisonous-potion">
+                <img src="./assets/images/book.png" alt="">
+                My Courses
+            </button>
+        </section>
+        <section id="teacher-main-table" class="container container--lager">
+            <div class="heading-section">
+                <h3>My Stats</h3>
+                <button id="main-table-advanced" class="heading-section__button-primary">
+                    <img src="./assets/images/gear.png" alt="">
+                </button>
+            </div>
+           <div>
+                <form class="inactive form-filter">
+                    <div class="form-filter__group">
+                        <label class="form-filter__input" for="begin-date">
+                            <span>De</span>
+                            <input type="date" name="" id="begin-date">
+                        </label>
+                        <label class="form-filter__input" for="end-date">
+                            <span>a</span>
+                            <input type="date" name="" id="end-date">
+                        </label>
+                    </div>
+
+                    <label class="form-filter__input" for="category">
+                        <span>Categorias</span>
+                        <select name="" id="category">
+                            <option value="">All</option>
+                            <option value="">Frontend</option>
+                            <option value="">Backend</option>
+                        </select>
+                    </label>
+                    
+                    <label class="form-filter__input" for="status">
+                        <span>Status Course</span>
+                        <select name="" id="status">
+                            <option value="">All</option>
+                            <option value="">Actives</option>
+                        </select>
+                    </label>
+                    
+                </form>
+                <table class="courses-table">
+                    <thead>
+                        <th>Course</th>
+                        <th>Students</th>
+                        <th>Completed</th>
+                        <th>Revenue</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML Course</td>
+                            <td>5</td>
+                            <td>30%</td>
+                            <td>$ 500.00</td>
+                        </tr>
+                        <tr>
+                            <td>CSS Course</td>
+                            <td>32</td>
+                            <td>16%</td>
+                            <td>$ 780.00</td>
+                        </tr>
+                        <tr>
+                            <td>Introduction to JavaScript</td>
+                            <td>32</td>
+                            <td>16%</td>
+                            <td>$ 1,600.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+           </div>
+
+            <p class="total"><span>Total revenue from all courses</span> <b>$ 2,880.00</b></p>
+        </section>
+
+        <section id="detail-table-advanced" class="inactive container container--lager">
+            <div class="heading-section">
+                <div class="heading-section heading-section--no-justify">
+                    <button class="heading-section__button-no-bg" data-backwards="true">
+                        <img src="./assets/images/left-arrow.png" alt="">
+                    </button>
+                    <h3>HTML Course</h3>
+                </div>
+                <button id="detail-filter-advanced" class="heading-section__button-primary">
+                    <img src="./assets/images/gear.png" alt="">
+                </button>
+            </div>
+
+            <form class="inactive form-filter">
+                <div class="form-filter__group">
+                    <label class="form-filter__input" for="begin-date">
+                        <span>De</span>
+                        <input type="date" name="" id="begin-date">
+                    </label>
+                    <label class="form-filter__input" for="end-date">
+                        <span>a</span>
+                        <input type="date" name="" id="end-date">
+                    </label>
+                </div>
+                
+                <label class="form-filter__input" for="category">
+                    <span>Categorias</span>
+                    <select name="" id="category">
+                        <option value="">All</option>
+                        <option value="">Frontend</option>
+                        <option value="">Backend</option>
+                    </select>
+                </label>
+                
+                <label class="form-filter__input" for="status">
+                    <span>Status Course</span>
+                    <select name="" id="status">
+                        <option value="">All</option>
+                        <option value="">Actives</option>
+                    </select>
+                </label>
+                
+            </form>
+
+            <div>
+                <table class="courses-table">
+                    <thead>
+                        <th>Student</th>
+                        <th>Date</th>
+                        <th>progress</th>
+                        <th>Pay Method</th>
+                        <th>Revenue</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Irving Saenz Colón</td>
+                            <td>24/02/2023</td>
+                            <td>50%</td>
+                            <td>PayPal</td>
+                            <td>$1500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Héctor Javier Muñiz</td>
+                            <td>24/02/2023</td>
+                            <td>70%</td>
+                            <td>PayPal</td>
+                            <td>$1500.00</td>
+                        </tr>
+                        <tr>
+                            <td>Alan Isaac Aldana Nuñez</td>
+                            <td>24/02/2023</td>
+                            <td>67%</td>
+                            <td>PayPal</td>
+                            <td>$1500.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="total">Total revenue <b>$ 500.00</b></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/profile.js"></script>
+</body>
+</html>
