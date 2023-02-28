@@ -44,6 +44,11 @@ body{
     background-color: var(--eclipse);
 }
 
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 h1, h2, h3{
     font-weight: 900;
     text-align: left;
@@ -149,6 +154,27 @@ h3{
 .course-chapter__information{
     padding: 8px 16px;
 }
+/*  */
+.button-section{
+    padding: 8px 16px;
+}
+.button-section>button{
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    background-color: var(--dire-wolf-dark);
+}
+
+.button-section__tab{
+    border: 2px solid var(--dire-wolf-dark);
+    color: var(--ultimate-grey);
+}
+
+.button-section__tab--active{
+    color: var(--dr-white);
+    border-bottom: 2px solid var(--butternut-squash);
+}
+
 /* Chapter Chapters */
 .course-chapters{
     width: 100%;
@@ -333,4 +359,13 @@ h3{
 
 .comment>p{
     color: var(--ultimate-grey);
+}
+
+@media screen and (min-width: 1000px) {
+    .course-chapter__header{
+        width: 70%;
+    }
+    .course-chapters{
+        width: 30%;
+    }
 }

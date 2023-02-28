@@ -11,26 +11,27 @@
     <title>Chapter</title>
 </head>
 <body>
-    <header class="course-chapter__header">
-        <button class="backwards-button" aria-label="backwards button" type="button">
-            <img src="./assets/icons/left-arrow.svg" alt="">
-        </button>
-        <video controls>
-            <source src="">
-        </video>
-        <div class="course-chapter__information">
-            <h1>HTML Course</h1>
-            <h2>Semantic</h2>
-            <small>12:32 minutes</small>
-        </div>
-    </header>
     <main>
-        <section>
-            <button>Chapters</button>
-            <button>Comments</button>
-        </section>
-        <section>
-            <div class="course-chapters">
+        <header class="course-chapter__header">
+            <button class="backwards-button" aria-label="backwards button" type="button">
+                <img src="./assets/icons/left-arrow.svg" alt="">
+            </button>
+            <video controls>
+                <source src="">
+            </video>
+            <div class="course-chapter__information">
+                <h1>HTML Course</h1>
+                <h2>Semantic</h2>
+                <small>12:32 minutes</small>
+            </div>
+            <div></div>
+        </header>
+        
+            <aside class="course-chapters">
+                <section class="button-section">
+                    <button class="button-section__tab button-section__tab--active">Chapters</button>
+                    <button class="button-section__tab">Comments</button>
+                </section>
                 <h3>Chapters</h3>
                 <a class="course-chapters__chapter course-chapters__chapter--active" href="./chapter.html">
                     <figure>
@@ -77,8 +78,8 @@
                         <small>12:32 min</small>
                     </div>
                 </a>
-            </div>
-            <div>
+            </aside>
+            <section>
                 <form class="form-comment">
                     <textarea name="" id="" cols="30" rows="10" placeholder="Share you knowledge"></textarea>
                     <section class="form__input-radios">
@@ -95,7 +96,6 @@
                     </section>
                     <button class="form-comment__button" type="submit">Publish</button>
                 </form>
-
                 <div class="comments-container">
                     <h3>Comments</h3>
                     <section class="heading-section">
@@ -119,8 +119,11 @@
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium voluptas laboriosam, labore incidunt ullam minus </p>
                     </article>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section>
+                <h3>Description</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum animi reprehenderit molestias nisi molestiae repellendus qui sint aut aliquam vel est debitis accusamus expedita perspiciatis inventore, voluptatem quae ullam sequi?</p>
+            </section>
     </main>
 </body>
 </html>
