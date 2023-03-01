@@ -27,8 +27,8 @@ Cosas que faltaron pot hacer:
       4.1-Pagina de Curso                                                           --Hecho
 5.-Editar perfil                                                                    --Falta
 6.-Pagina de opciones de usuario                                                    --Falta
-7.-Hacer responsivo la Navbar                                                       --Falta
-8.-Agregar Navbar a todas las páginas                                               --En progreso
+7.-Hacer responsivo la Navbar                                                       --Hecho
+8.-Agregar Navbar a todas las páginas                                               --Hecho
 9.-Hacer modal para agregar metodos de pago                                         --Falta
-10.-Agregar busqueda avanzada en la página de busqueda                              --Falta
+10.-Agregar busqueda avanzada en la página de busqueda                              --Hecho
 11.-Hacer icono para la página                                                      --Falta

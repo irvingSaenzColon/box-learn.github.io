@@ -46,7 +46,8 @@ body{
     background-color: var(--eclipse);
 }
 
-header{
+
+header, main{
     width: 100%;
     max-width: var(--max-width-content);
     margin: 0 auto;
@@ -172,14 +173,77 @@ nav>ul{
 /* form-search */
 .form-search{
     width: 100%;
+    max-width: var(--max-width-content);
     margin: 0 auto;
     border-radius: var(--border-sm);
-    background-color: var(--mattherhorn);
+}
+
+.form-search input,
+.form-search select,
+.form-search label,
+.form-search button{
+    font-size: 1.5rem;
+    font-family: 'Nunito', cursive;
+}
+
+.form-search__advanced-btn{
+    cursor: pointer;
+    display: block;
+    margin: 0 0 16px auto;
+    border: none;
+    color: var(--butternut-squash);
+    background-color: var(--eclipse);
+}
+
+.form-search__advanced-btn>span{
+    padding-right: 10px;
+}
+
+.form-search__advanced-btn>img{
+    
+    width: 15px;
+    height: 9px;
+}
+
+.form-search__advanced{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-search__advanced>input,
+.form-search__advanced>select{
+    display: block;
+    padding: 8px 16px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 16px;
+    border-radius: var(--border-sm);
+    border: 1px solid var(--dire-wolf-dark);
+    color: var(--ultimate-grey);
+    background-color: var(--dire-wolf-dark);
+}
+
+.form-search__label{
+    display: block;
+    margin-bottom: 4px;
+    color: var(--dr-white);
+}
+
+.form-search__advanced .form-search__label--fsize-bg{
+    font-size: 1.8rem;
+}
+
+.form-search__label--full-width{
+    width: 100%;
 }
 
 .form-search__input{
     position: relative;
+    border-radius: var(--border-sm);
     padding: 8px 35px 8px 16px;
+    margin-bottom: 16px;
+    background-color: var(--mattherhorn);
 }
 
 .form-search__input>img{
@@ -194,6 +258,19 @@ nav>ul{
     border: none;
     font-size: 1.5rem;
     background-color: transparent;
+}
+
+.form-search__submit{
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    border-radius: var(--border-sm);
+    border: 1px solid var(--butternut-squash);
+    color: var(--dr-white);
+    background-color: var(--butternut-squash);
+    font-size: 1.5rem;
 }
 
 .card-section{
@@ -234,4 +311,74 @@ nav>ul{
     font-weight: 500;
     font-size: 1.3rem;
     background-color: var(--dire-wolf-dark);
+}
+
+/* Container of courses */
+.my-courses__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.my-courses__item{
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: var(--border-sm);
+    text-decoration: none;
+    background-color: var(--dire-wolf-dark);
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.4);
+}
+
+.my-courses__item>figure{
+    display: none;
+    width: 100%;
+    height: 140px;
+    background-color: var(--dire-wolf);
+}
+
+.my-courses__item>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.my-courses__item>div{
+    padding: 8px 16px;
+}
+
+.my-courses__item>div>p{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.6rem;
+    color: var(--dr-white);
+}
+
+.my-courses__item>div>div>span{
+    display: block;
+    font-size: 1.4rem;
+    color: var(--live);
+}
+
+.my-courses__item>div>div>small,
+.my-courses__item>div>small{
+    font-size: 1.4rem;
+    color: var(--ultimate-grey);
+}
+
+.my-courses__item>div>span{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    border-radius: var(--border-sm);
+    padding: 2px 4px;
+    font-size: 1.4rem;
+    color: var(--dr-white);
+    background-color: var(--butternut-squash);
 }
