@@ -44,8 +44,15 @@ html{
 }
 
 body{
-    padding: 8px 16px 62px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 16px 72px;
     background-color: var(--eclipse);
+}
+
+main{
+    width: 100%;
+    max-width: var(--max-width-content);
 }
 
 h1, h2, h3{
@@ -71,13 +78,90 @@ h3{
     margin: 12px 0;
 }
 
+/* Nav */
+
+nav{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    padding: 8px 16px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dire-wolf-dark);
+}
+
+nav>ul{
+    flex-grow: 2;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 15px;
+    list-style-type: none;
+}
+
+.nav__logo{
+    flex-grow: 1;
+    display: none;
+    height: 46px;
+}
+
+.nav__logo>img{
+    height: 100%;
+}
+
+.nav__form{
+    display: none;
+    flex-grow: 2;
+}
+
+.nav__search{
+    width: 100%;
+    border: 1px solid var(--eclipse);
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    font-family: 'Nunito', cursive;
+    color: var(--ultimate-grey);
+    background-color: var(--eclipse);
+}
+
+.nav__search:hover{
+    border: 1px solid var(--mattherhorn-ligther);
+}
+
+.nav__search:focus{
+    color: var(--dr-white);
+    outline: 2px solid var(--butternut-squash);
+}
+
+.nav-menu li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-menu span{
+    display: block;
+    font-size: 1.2rem;
+    color: var(--ultimate-grey);
+}
+
+.nav-menu a.active>span{
+    color: var(--butternut-squash);
+}
+.nav-menu a.active>svg>path{
+    stroke: var(--butternut-squash);
+}
+
 #student-stats{
     overflow-x: hidden;
 }
 
 .main-title{
     width: 100%;
-    max-width: 800px;
+    max-width: var(--max-width-content);
     margin: 16px auto 24px;
     font-size: 2.4rem;
 }
@@ -91,7 +175,7 @@ h3{
     flex-wrap: wrap;
     margin: 16px auto;
     width: 100%;
-    max-width: 600px;
+    max-width: var(--max-width-content);
     background-color: var(--eclipse);
 }
 

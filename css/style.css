@@ -103,7 +103,7 @@ nav>ul{
 
 .nav__logo{
     flex-grow: 1;
-    display: block;
+    display: none;
     height: 46px;
 }
 
@@ -112,6 +112,7 @@ nav>ul{
 }
 
 .nav__form{
+    display: none;
     flex-grow: 2;
 }
 

@@ -1,12 +1,12 @@
-body{
-    padding: 0;
-}
-
 nav{
     position: sticky;
     gap: 15px;
     top: 0;
     order: 1;
+}
+
+body{
+    padding: 0 0 72px;
 }
 
 .nav__logo{
@@ -23,14 +23,9 @@ nav>ul{
     justify-content: space-evenly;
 }
 
-.main-header{
+.profile-information{
     order: 2;
 }
-
-.main-content{
+main{
     order: 3;
-}
-
-footer{
-    order: 4;
 }

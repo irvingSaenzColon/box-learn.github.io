@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style-search.css">
+    <link rel="stylesheet" href="./css/style-search-desktop.css" media="screen and (min-width: 1000px)">
     <title>Search</title>
 </head>
 <body>
@@ -53,6 +54,12 @@
         </section>
     </main>
     <nav>
+        <a class="nav__logo" href="">
+            <img src="./assets/images/fox-logo-sm.png" alt="">
+        </a>
+        <form class="nav__form" action="">
+            <input class="nav__search" type="text" name="" id="" placeholder="What are you looking for?...">
+        </form>
         <ul class="nav-menu">
             <li>
                 <a class="active" href="./index.html">
@@ -68,6 +75,15 @@
                         <path d="M18.7615 17.8346C20.3176 16.1531 21.2661 13.9189 21.2661 11.4669C21.2661 6.23849 16.9532 2 11.633 2C6.31285 2 2 6.23849 2 11.4669C2 16.6954 6.31285 20.9339 11.633 20.9339C14.4582 20.9339 16.9994 19.7386 18.7615 17.8346ZM18.7615 17.8346L23.9269 23" stroke="#ABABAB" stroke-width="3" stroke-linecap="round"/>
                     </svg>
                     <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="./messages.html">
+                    <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 13.766C0.5 3.61332 5.66651 1 15.8191 1C25.9718 1 30.6277 3.61332 30.6277 13.766V25H14.7979C4.64523 25 0.5 23.9186 0.5 13.766Z" fill="#ABABAB" stroke="#ABABAB" stroke-linejoin="round"/>
+                        <path d="M8 9H16.5H25M8 13.7541H25M8 18H25" stroke="#241d20" stroke-width="2" stroke-linecap="round"/>
+                    </svg>                        
+                    <span>Messages</span>
                 </a>
             </li>
             <li>
