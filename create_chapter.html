@@ -12,8 +12,10 @@
 </head>
 <body>
     <main>
-        <h1>Create Chapter</h1>
-        <h2>Chapter Data</h2>
+        <section>
+            <h1>Create Chapter</h1>
+            <h2>Chapter Data</h2>
+        </section>
         <form class="form">
             <div class="form__input">
                 <label class="form__placeholder" for="title">Title</label>
@@ -36,8 +38,14 @@
                     <span>Pay</span>
                 </label>
             </div>
-            <label class="form__label" for="">Subir Vídeo</label>
-            <input type="file" name="" id="">
+            <label class="button-add-pay" for="media">
+                <figure>
+                    <img src="./assets/images/plus-orange.png" alt="">
+                    <figcaption>Subir Vídeo</figcaption>
+                </figure>
+                <input class="inactive" type="file" name="" id="media">
+            </label>
+            
             <button class="btn">Create Chapter</button>
         </form>
     </main>
