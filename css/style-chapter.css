@@ -56,7 +56,7 @@ h1, h2, h3{
 }
 
 h1{
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     letter-spacing: 2px;
     margin-bottom: 24px;
 }
@@ -64,13 +64,13 @@ h1{
 h2{
     margin-bottom: 12px;
     font-weight: 500;
-    font-size: 1.8rem;
+    font-size: 2.0rem;
 }
 
 h3{
     margin-bottom: 8px;
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 }
 
 /* General Styles */
@@ -147,13 +147,49 @@ h3{
 }
 
 .course-chapter__header small{
+    display: block;
+    margin-bottom: 12px;
     font-size: 1.2rem;
     color: var(--ultimate-grey);
 }
 
 .course-chapter__information{
+    display: flex;
+    flex-wrap: wrap;
     padding: 8px 16px;
 }
+
+.course-chapter__title{
+    width: 100%;
+}
+
+.course-chapter__buttons{
+    text-align: end;
+    width: 100%;
+}
+
+.course-chapter__buttons>button{
+    border: 1px solid var(--butternut-squash);
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    color: var(--dr-white);
+    background-color: var(--butternut-squash);
+}
+
+.course-chapter__buttons>button:first-of-type{
+    margin-right: 10px;
+}
+
+.course-chapter__buttons>button:last-of-type{
+    margin-left: 10px;
+}
+
+.course-chapter__information p{
+    font-size: 1.5rem;
+    color: var(--ultimate-grey);
+}
+
 /*  */
 .button-section{
     padding: 8px 16px;
@@ -198,6 +234,7 @@ h3{
 
 
 .course-chapters__chapter>figure{
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -206,8 +243,17 @@ h3{
     border-radius: 50%;
     background-color: var(--eclipse);
 }
+.course-chapters__chapter>div{
+    flex-shrink: 0;
+    width: calc(100% - 56px);
+}
 
 .course-chapters__chapter p{
+    flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 1.5rem;
     color: var(--dr-white);
 }
@@ -263,6 +309,7 @@ h3{
 }
 
 .form__radio{
+    cursor: pointer;
     position: relative;
 }
 
@@ -362,10 +409,76 @@ h3{
 }
 
 @media screen and (min-width: 1000px) {
+    .course-chapter__buttons>button{
+        cursor: pointer;
+        transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .course-chapter__buttons>button:hover{
+        background-color: var(--eclipse);
+        color: var(--butternut-squash);
+    }
+
+    .course-chapter__header{
+        order: 1;
+    }
+    .course-chapters{
+        max-height: 560px;
+        overflow-y: auto;
+        order: 2;
+    }
+    .comments-section{
+        max-width: 70%;
+        order: 4;
+    }
+    .chapter-description{
+        margin: 0 auto;
+        order: 3;
+    }
+    .button-section{
+        display: none;
+    }
     .course-chapter__header{
         width: 70%;
     }
     .course-chapters{
         width: 30%;
+    }
+    .form-comment>textarea{
+        height: 100px;
+    }
+
+    .course-chapters__chapter{
+        transition: background-color 0.25s ease;
+    }
+
+    .course-chapters__chapter:hover{
+        background-color: var(--dire-wolf);
+    }
+    .backwards-button{
+        display: none;
+    }
+
+    .form__input-radios{
+        justify-content: end;
+        gap: 45px;
+    }
+
+    .form-comment__button{
+        cursor: pointer;
+        transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .form-comment__button:hover{
+        background-color: var(--eclipse);
+        color: var(--butternut-squash);
+    }
+
+    .course-chapter__title{
+        width: 50%;
+    }
+
+    .course-chapter__buttons{
+        width: 50%;
     }
 }

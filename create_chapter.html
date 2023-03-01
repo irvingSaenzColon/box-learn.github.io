@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style-create_course.css">
+    <link rel="stylesheet" href="./css/style-create_chapter.css">
     <title>Document</title>
 </head>
 <body>
     <main>
-        <h1>Publish Course</h1>
-        <h2>Course Data</h2>
+        <h1>Create Chapter</h1>
+        <h2>Chapter Data</h2>
         <form class="form">
             <div class="form__input">
                 <label class="form__placeholder" for="title">Title</label>
@@ -23,24 +23,22 @@
                 <label class="form__placeholder" for="title">Write a description so users can understand more about the course</label>
                 <textarea name="" id="" cols="30" rows="5"></textarea>
             </div>
-            <label class="form__label">Género</label>
+            <label class="form__label">Chapter type</label>
             <div class="form__input-radios">
                 <label class="form__radio" for="gender-male">
                     <input id="gender-male" name="gender" type="radio">
                     <div><span></span></div>
-                    <span>Active</span>
+                    <span>Free</span>
                 </label>
                 <label class="form__radio" for="gender-female">
                     <input id="gender-female" checked name="gender" type="radio">
                     <div><span></span></div>
-                    <span>Innactive</span>
+                    <span>Pay</span>
                 </label>
             </div>
-            <div class="form__input">
-                <label class="form__placeholder" for="category">Category</label>
-                <input id="category" type="text" >
-            </div>
-            <button class="btn">Create</button>
+            <label class="form__label" for="">Subir Vídeo</label>
+            <input type="file" name="" id="">
+            <button class="btn">Create Chapter</button>
         </form>
     </main>
 </body>

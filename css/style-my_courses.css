@@ -1,0 +1,299 @@
+:root{
+    /* Background of page */
+    --eclipse:              #272425;
+    --live:                 #554C51;
+    /* Titles or important texts */
+    --dr-white:             #FAFAFA;
+    /* Special messages and elements */
+    --butternut-squash:     #FC7703;
+    /* Secondary  */
+    --butternut-squash-dark:#cf6508;
+    /* Secondary stuff */
+    --flood:                #657ED4;
+
+    /* for labels */
+    --mattherhorn:          #302b2e;
+    --mattherhorn-ligther:  #4F464B;
+    /* for inputs */
+    --ultimate-grey:        #ABABAB;
+    /* for a nav */
+    --dire-wolf:            #2C2428;
+    /* for a course card */
+    --dire-wolf-dark:       #241d20;
+
+
+    /* Borders */
+    --border-sm: 4px;
+
+    --max-width-content: 1000px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    padding-bottom: 24px;
+    background-color: var(--eclipse);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 16px 8px;
+}
+
+h1, h2, h3{
+    font-weight: 900;
+    text-align: left;
+    color: var(--dr-white);
+}
+
+h1{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+}
+
+h2{
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 2.0rem;
+}
+
+h3{
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+/* My course heading */
+.my-course-heading{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.my-course-heading>button{
+    border: none;
+    height: 35px;
+    background-color: var(--eclipse);
+}
+
+.my-course-heading>button>img{
+    height: 100%;
+}
+
+/* Form filter for  my courses*/
+.my-course__filter{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Container of courses */
+.my-courses__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.my-courses__item{
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: var(--border-sm);
+    text-decoration: none;
+    background-color: var(--dire-wolf-dark);
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.4);
+}
+
+.my-courses__item>figure{
+    display: none;
+    width: 100%;
+    height: 140px;
+    background-color: var(--dire-wolf);
+}
+
+.my-courses__item>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.my-courses__item>div{
+    padding: 8px 16px;
+}
+
+.my-courses__item>div>p{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.6rem;
+    color: var(--dr-white);
+}
+
+.my-courses__item>div>div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-courses__item>div>div>small,
+.my-courses__item>div>small{
+    font-size: 1.4rem;
+    color: var(--ultimate-grey);
+}
+
+.my-courses__item>div>span{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    border-radius: var(--border-sm);
+    padding: 2px 4px;
+    font-size: 1.4rem;
+    color: var(--dr-white);
+    background-color: var(--butternut-squash);
+}
+
+.my-courses__configuration{
+    cursor: pointer;
+    border: none;
+    background-color: var(--dire-wolf-dark);
+}
+
+/* Form group */
+.form__group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.form__group--max-width{
+    max-width: 350px;
+}
+
+/* Form input */
+
+.form__input{
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    border: 1px solid var(--mattherhorn);
+    border-radius: var(--border-sm);
+    color: var(--ultimate-grey);
+    background-color: var(--mattherhorn);
+}
+
+.form__input:hover{ 
+    cursor: text;
+    border: 1px solid var(--live);
+}
+.form__input--focus{
+    outline: 2px solid var(--butternut-squash);
+}
+.form__input--focus>label{
+    color: var(--butternut-squash);
+}
+
+.form__input--half{
+    width: 50%;
+}
+
+.form__input>label{
+    cursor: text;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    display: block;
+    width: fit-content;
+    background-color: var(--mattherhorn);   
+}
+
+.form__input>input{
+    display: block;
+    padding: 10px 16px;
+    border: none;
+    width: 100%;
+    font-size: 1.6rem;
+    color: var(--carbon);
+    background-color: var(--right-black-fogra-39);
+}
+
+.form__input>img{
+    position: absolute;
+    right: 6px;
+    top: 5px;
+}
+
+.form__placeholder{
+    font-size: 1.4rem;
+    border-radius: var(--border-sm);
+    padding: 0 4px;
+    background-color: var(--right-black-fogra-39);
+}
+
+.form__placeholder--ultra-gray{
+    color: var(--ultimate-grey);
+}
+
+.form__placeholder--out{
+    animation-name: label-out;
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__placeholder--in{
+    animation-name: label-in;
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+/* Form select */
+.form__select{
+    border: 1px solid var(--live);
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    font-family: 'Nunito',cursive;
+    color: var(--dr-white);
+    background-color: var(--dire-wolf-dark);
+}
+
+@media screen and (min-width: 800px) {
+    .my-course-heading>button{
+        display: none;
+    }
+
+    .my-courses__item{
+        max-width: 235px;
+    }
+
+    .my-courses__item>figure{
+        display: block;
+        border-top-right-radius: var(--border-sm);
+        border-top-left-radius: var(--border-sm);
+        overflow: hidden;
+    }
+}

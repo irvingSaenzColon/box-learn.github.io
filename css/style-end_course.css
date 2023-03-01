@@ -1,0 +1,164 @@
+:root{
+    /* Background of page */
+    --eclipse:              #272425;
+    --live:                 #554C51;
+    /* Titles or important texts */
+    --dr-white:             #FAFAFA;
+    /* Special messages and elements */
+    --butternut-squash:     #FC7703;
+    /* Secondary  */
+    --butternut-squash-dark:#cf6508;
+    /* Secondary stuff */
+    --flood:                #657ED4;
+
+    /* for labels */
+    --mattherhorn:          #302b2e;
+    --mattherhorn-ligther:  #4F464B;
+    /* for inputs */
+    --ultimate-grey:        #ABABAB;
+    /* for a nav */
+    --dire-wolf:            #2C2428;
+    /* for a course card */
+    --dire-wolf-dark:       #241d20;
+
+
+    /* Borders */
+    --border-sm: 4px;
+
+    --max-width-content: 1000px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    padding: 8px 16px 24px;
+    background-color: var(--eclipse);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto ;
+}
+
+h1, h2, h3{
+    display: block;
+    font-weight: 900;
+    text-align: left;
+    color: var(--dr-white);
+}
+
+h1{
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    color: var(--butternut-squash);
+}
+
+h2{
+    width: 100%;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 2.0rem;
+}
+
+h2>span{
+    display: block;
+    padding-left: 46px;
+    color: var(--flood);
+}
+
+h3{
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+picture{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+p{
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--ultimate-grey);
+}
+
+/* Container Basic CSS */
+.container--full{
+    width: 100vw;
+    height: 100vh;
+}
+.container--flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Buttons container */
+.buttons-container{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Button style */
+.btn{
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    max-width: 210px;
+    height: fit-content;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-sm);
+    color: var(--dr-white);
+    font-size: 1.5rem;
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn--primary{
+    border: 1px solid var(--butternut-squash);
+    color: var(--dr-white);
+    background-color: var(--butternut-squash);
+}
+
+.btn--primary:hover{
+    color: var(--butternut-squash);
+    background-color: var(--eclipse);
+}
+
+.btn--secondary{
+    border: 1px solid var(--flood);
+    color: var(--dr-white);
+    background-color: var(--flood);
+}
+
+.btn--secondary:hover{
+    color: var(--flood);
+    background-color: var(--eclipse);
+}
+
+@media screen and (min-width: 1000px) {
+    h2{
+        margin-left: 200px;
+    }
+}

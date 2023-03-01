@@ -1,0 +1,251 @@
+:root{
+    /* Background of page */
+    --eclipse:              #272425;
+    --live:                 #554C51;
+    /* Titles or important texts */
+    --dr-white:             #FAFAFA;
+    /* Special messages and elements */
+    --butternut-squash:     #FC7703;
+    /* Secondary  */
+    --butternut-squash-dark:#cf6508;
+    /* Secondary stuff */
+    --flood:                #657ED4;
+
+    /* for labels */
+    --mattherhorn:          #302b2e;
+    --mattherhorn-ligther:  #4F464B;
+    /* for inputs */
+    --ultimate-grey:        #ABABAB;
+    /* for a nav */
+    --dire-wolf:            #2C2428;
+    /* for a course card */
+    --dire-wolf-dark:       #241d20;
+
+
+    /* Borders */
+    --border-sm: 4px;
+
+    --max-width-content: 1000px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    padding-bottom: 24px;
+    background-color: var(--eclipse);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px 16px 8px;
+}
+
+h1, h2, h3{
+    font-weight: 900;
+    text-align: left;
+    color: var(--dr-white);
+}
+
+h1{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+}
+
+h2{
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 2.0rem;
+}
+
+h3{
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+header{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* My course heading */
+.heading{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    margin: 0 0 24px;
+}
+
+.heading>button{
+    border: none;
+    height: 35px;
+    background-color: var(--eclipse);
+}
+
+.heading>button>img{
+    height: 100%;
+}
+
+.description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--ultimate-grey);
+}
+
+.description__button{
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 50%;
+    border: 1px solid var(--butternut-squash);
+    background-color: var(--butternut-squash);
+
+    z-index: 99;
+}
+
+.description>button>img{
+    width: 100%;
+    height: 100%;
+}
+
+.description__button>span{
+    display: none;
+    font-size: 1.5rem;
+    color: var(--dr-white);
+}
+
+/* Container where paymethod are gonna be displayed */
+.paymethod-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* Pay method item */
+.paymethod-item{
+    position: relative;
+    border-radius: var(--border-sm);
+    width: 100%;
+    padding: 16px;
+    background-color: var(--dire-wolf-dark);
+
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.4);
+}
+
+.paymethod-item__bank-logo{
+    width: 150px;
+    margin-bottom: 12px;
+}
+
+.paymethod-item__bank-logo>img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.paymethod-item__owner{
+    font-size: 1.8rem;
+    color: var(--dr-white);
+}
+
+.paymethod-item__number{
+    font-size: 1.5rem;
+    color: var(--ultimate-grey);
+}
+
+.paymethod-item__expire{
+    font-size: 1.5rem;
+    color: var(--mattherhorn-ligther);
+}
+
+.paymethod-item__options{
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border: none;
+    background-color: var(--dire-wolf-dark);
+}
+
+/* Button to add */
+.button-add-pay{
+    cursor: pointer;
+    display: block;
+    height: 183px;
+    width: 100%;
+    border: 1px dashed var(--butternut-squash);
+    border-radius: var(--border-sm);
+    background-color: var(--eclipse);
+    color: var(--butternut-squash);
+}
+
+@media screen and (min-width: 800px) {
+    .heading>button{
+        display: none;
+    }
+
+    .paymethod-container{
+        justify-content: start;
+    }
+
+    .paymethod-item{
+        max-width: 318px;
+    }
+
+    .description__button{
+        position: static;
+        border-radius: var(--border-sm);
+        padding: 8px 16px;
+        height: fit-content;
+        width: fit-content;
+
+        transition: background-color 0.25s ease;
+        z-index: unset;
+    }
+
+    .description__button:hover{
+        background-color: var(--eclipse);
+        color: var(--butternut-squash);
+    }
+    .description__button:hover>span{
+        color: var(--butternut-squash);
+    }
+
+    .description__button>img{
+        display: none;
+    }
+
+    .description__button>span{
+        display: inline;
+        transition: color 0.25s ease;
+    }
+
+    .button-add-pay{
+        max-width: 318px;
+    }
+}
