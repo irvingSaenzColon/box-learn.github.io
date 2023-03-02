@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,82 +7,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style-search.css">
-    <link rel="stylesheet" href="./css/style-search-desktop.css" media="screen and (min-width: 1000px)">
-    <title>Search</title>
+    <link rel="stylesheet" href="./css/style-search_category.css">
+    <link rel="stylesheet" href="./css/style-search_category-desktop.css" media="screen and (min-width: 1000px)">
+    <title>Categories</title>
 </head>
-
 <body>
     <header>
-        <h1>Search</h1>
-        <form class="form-search" action="">
-            <div class="form-search__input">
-                <input type="text">
-                <img src="./assets/icons/search.svg" alt="" srcset="">
-            </div>
-            <button class="form-search__advanced-btn" type="button">
-                <span>advanced</span>
-                <img src="./assets/images/down-arrow.png" alt="">
+        <section class="mobile-heading">
+            <button class="backwards-button" type="button" aria-label="backwards">
+                <img src="./assets/icons/left-arrow.svg" alt="to let know mobile user that can go backwards" />
             </button>
-            <section class="form-search__advanced">
-                <label class="form-search__label" for="">Category</label>
-                <select name="" id="">
-                    <option value="">All</option>
-                    <option value="">Frontend</option>
-                    <option value="">Backend</option>
-                    <option value="">Web Development</option>
-                </select>
-                <label class="form-search__label" for="">Teachers</label>
-                <input list="teacher-list" id="teacher" type="text">
-                <datalist id="teacher-list">
-                    <option value="Irving Saenz Colón" />
-                    <option value="Héctor Javier Ortiz Muñoz" />
-                    <option value="Alan Isaac Aldana Nuñez" />
-                </datalist>
-                <label class="form-search__label form-search__label--full-width form-search__label--fsize-bg" for="">Between dates</label>
-                <label class="form-search__label" for="">Begin Date</label>
-                <input type="date" name="" id="">
-                <label class="form-search__label" for="">End Date</label>
-                <input type="date" name="" id="">
-                <button class="form-search__submit" type="submit">Search</button>
-            </section>
-        </form>
+            <h1>Frontend Developer</h1>
+        </section>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, sapiente adipisci harum id ipsa non dolorem repellendus, laudantium quaerat architecto, quibusdam dolores in. Dolore deleniti voluptates, ex ab perspiciatis quos.</p>
     </header>
     <main>
-        <div class="heading-section">
-            <h2>Categories</h2>
-            <a class="link link--heading" href="./search_category.html">see more</a>
-        </div>
-        <section class="card-section">
-            <a class="card" href="">
-                <p>Frontend Developer</p>
-                <footer>
-                    <p>Courses: 5</p>
-                </footer>
+        <section class="heading-section">
+            <h2>Latest</h2>
+        </section>
+        <section class="carousel">
+            <a class="carousel__item" href="">
+                <p>HTML Course</p>
+                <div>
+                    <small>5 Chapters</small>
+                    <span>New</span>
+                </div>
             </a>
-            <a class="card" href="">
-                <p>Backend Developer</p>
-                <footer>
-                    <p>Courses: 5</p>
-                </footer>
-            </a>
-            <a class="card" href="">
-                <p>Graphic Design</p>
-                <footer>
-                    <p>Courses: 5</p>
-                </footer>
-            </a>
-            <a class="card" href="">
-                <p>English Academy</p>
-                <footer>
-                    <p>Courses: 5</p>
-                </footer>
+            <a class="carousel__item" href="">
+                <p>Fundamentals of Javascript</p>
+                <div>
+                    <small>12 Chapters</small>
+                    <span>New</span>
+                </div>
             </a>
         </section>
-        <div class="heading-section">
-            <h2>Courses</h2>
-            <a class="link link--heading" href="./search_category.html">see more</a>
-        </div>
+        <section class="heading-section">
+            <h2>All Courses</h2>
+            <label id="order-by" for="">Order by</label>
+            <select class="form__input" name="" id="order-by">
+                <option value="">Name</option>
+                <option value="">Latest</option>
+                <option value="">Most Popular</option>
+            </select>
+        </section>
         <section class="my-courses__container">
             <a href="./introduction_course.html" class="my-courses__item">
                 <figure>
@@ -202,9 +168,7 @@
             <li>
                 <a class="active" href="./index.html">
                     <svg width="42" height="30" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7.59598 19.5L7.59598 29H13.4271V22.0323H18.4417V29H33.596L33.596 19.5M7.59598 19.5L21.596 7.92857L33.596 19.5M7.59598 19.5L4.68432 22.3504L2 19L21.596 2L39.692 19L36.5076 22.3504L33.596 19.5M22.8092 25.5161H28.956V19.9736H22.8092V25.5161Z"
-                            stroke="#ABABAB" stroke-width="2" />
+                        <path d="M7.59598 19.5L7.59598 29H13.4271V22.0323H18.4417V29H33.596L33.596 19.5M7.59598 19.5L21.596 7.92857L33.596 19.5M7.59598 19.5L4.68432 22.3504L2 19L21.596 2L39.692 19L36.5076 22.3504L33.596 19.5M22.8092 25.5161H28.956V19.9736H22.8092V25.5161Z" stroke="#ABABAB" stroke-width="2"/>
                     </svg>
                     <span>Home</span>
                 </a>
@@ -212,9 +176,7 @@
             <li>
                 <a href="./search.html">
                     <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M18.7615 17.8346C20.3176 16.1531 21.2661 13.9189 21.2661 11.4669C21.2661 6.23849 16.9532 2 11.633 2C6.31285 2 2 6.23849 2 11.4669C2 16.6954 6.31285 20.9339 11.633 20.9339C14.4582 20.9339 16.9994 19.7386 18.7615 17.8346ZM18.7615 17.8346L23.9269 23"
-                            stroke="#ABABAB" stroke-width="3" stroke-linecap="round" />
+                        <path d="M18.7615 17.8346C20.3176 16.1531 21.2661 13.9189 21.2661 11.4669C21.2661 6.23849 16.9532 2 11.633 2C6.31285 2 2 6.23849 2 11.4669C2 16.6954 6.31285 20.9339 11.633 20.9339C14.4582 20.9339 16.9994 19.7386 18.7615 17.8346ZM18.7615 17.8346L23.9269 23" stroke="#ABABAB" stroke-width="3" stroke-linecap="round"/>
                     </svg>
                     <span>Search</span>
                 </a>
@@ -222,24 +184,17 @@
             <li>
                 <a href="./messages.html">
                     <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M0.5 13.766C0.5 3.61332 5.66651 1 15.8191 1C25.9718 1 30.6277 3.61332 30.6277 13.766V25H14.7979C4.64523 25 0.5 23.9186 0.5 13.766Z"
-                            fill="#ABABAB" stroke="#ABABAB" stroke-linejoin="round" />
-                        <path d="M8 9H16.5H25M8 13.7541H25M8 18H25" stroke="#241d20" stroke-width="2"
-                            stroke-linecap="round" />
-                    </svg>
+                        <path d="M0.5 13.766C0.5 3.61332 5.66651 1 15.8191 1C25.9718 1 30.6277 3.61332 30.6277 13.766V25H14.7979C4.64523 25 0.5 23.9186 0.5 13.766Z" fill="#ABABAB" stroke="#ABABAB" stroke-linejoin="round"/>
+                        <path d="M8 9H16.5H25M8 13.7541H25M8 18H25" stroke="#241d20" stroke-width="2" stroke-linecap="round"/>
+                    </svg>                        
                     <span>Messages</span>
                 </a>
             </li>
             <li>
                 <a href="./profile.html">
                     <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M2.49573 7.85461C2.49573 11.5719 5.50922 14.5854 9.22656 14.5854C12.9439 14.5854 15.9574 11.5719 15.9574 7.85461C15.9574 4.13727 12.9439 1.12378 9.22656 1.12378C5.50922 1.12378 2.49573 4.13727 2.49573 7.85461Z"
-                            stroke="#ABABAB" stroke-width="2" />
-                        <path
-                            d="M1.04875 23L3.69934 17.7096M18.0782 22.8423L15.21 17.603M3.69934 17.7096L9.37582 17.657L15.21 17.603M3.69934 17.7096L15.21 17.603"
-                            stroke="#ABABAB" stroke-width="2" />
+                        <path d="M2.49573 7.85461C2.49573 11.5719 5.50922 14.5854 9.22656 14.5854C12.9439 14.5854 15.9574 11.5719 15.9574 7.85461C15.9574 4.13727 12.9439 1.12378 9.22656 1.12378C5.50922 1.12378 2.49573 4.13727 2.49573 7.85461Z" stroke="#ABABAB" stroke-width="2"/>
+                        <path d="M1.04875 23L3.69934 17.7096M18.0782 22.8423L15.21 17.603M3.69934 17.7096L9.37582 17.657L15.21 17.603M3.69934 17.7096L15.21 17.603" stroke="#ABABAB" stroke-width="2"/>
                     </svg>
                     <span>Profile</span>
                 </a>
@@ -247,5 +202,4 @@
         </ul>
     </nav>
 </body>
-
 </html>

@@ -1,0 +1,388 @@
+:root{
+    /* Background of page */
+    --eclipse:              #272425;
+    --live:                 #554C51;
+    /* Titles or important texts */
+    --dr-white:             #FAFAFA;
+    /* Special messages and elements */
+    --butternut-squash:     #FC7703;
+    /* Secondary  */
+    --butternut-squash-dark:#cf6508;
+    /* Secondary stuff */
+    --flood:                #657ED4;
+
+    /* for labels */
+    --mattherhorn:          #302b2e;
+    --mattherhorn-ligther:  #4F464B;
+    /* for inputs */
+    --ultimate-grey:        #ABABAB;
+    /* for a nav */
+    --dire-wolf:            #2C2428;
+    /* for a course card */
+    --dire-wolf-dark:       #241d20;
+
+
+    /* Borders */
+    --border-sm: 4px;
+
+    --max-width-content: 1000px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 16px 72px;
+    background-color: var(--eclipse);
+}
+
+main, header{
+    width: 100%;
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+}
+
+h1, h2, h3{
+    font-weight: 900;
+    text-align: left;
+    color: var(--dr-white);
+}
+
+h1{
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+h2{
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+/* Nav */
+
+nav{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    padding: 8px 16px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dire-wolf-dark);
+}
+
+nav>ul{
+    flex-grow: 2;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 15px;
+    list-style-type: none;
+}
+
+.nav__logo{
+    flex-grow: 1;
+    display: none;
+    height: 46px;
+}
+
+.nav__logo>img{
+    height: 100%;
+}
+
+.nav__form{
+    display: none;
+    flex-grow: 2;
+}
+
+.nav__search{
+    width: 100%;
+    border: 1px solid var(--eclipse);
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    font-family: 'Nunito', cursive;
+    color: var(--ultimate-grey);
+    background-color: var(--eclipse);
+}
+
+.nav__search:hover{
+    border: 1px solid var(--mattherhorn-ligther);
+}
+
+.nav__search:focus{
+    color: var(--dr-white);
+    outline: 2px solid var(--butternut-squash);
+}
+
+.nav-menu li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-menu span{
+    display: block;
+    font-size: 1.2rem;
+    color: var(--ultimate-grey);
+}
+
+.nav-menu a.active>span{
+    color: var(--butternut-squash);
+}
+.nav-menu a.active>svg>path{
+    stroke: var(--butternut-squash);
+}
+
+/* General Styles */
+.description{
+    font-size: 1.3rem;
+    color: var(--ultimate-grey);
+}
+
+.backwards-button{
+    border: none;
+    background-color: transparent;
+}
+
+.mobile-heading{
+    display: flex;
+    gap: 15px;
+    margin: 24px auto;
+}
+
+.mobile-heading>h1{
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--butternut-squash);
+}
+
+.link--heading{
+    font-size: 1.8rem;
+}
+
+.heading-section{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 12px auto;
+    width: 100%;
+    max-width: var(--max-width-content);
+}
+
+.heading-section>h2{
+    width: 100%;
+    margin: 4px 0;
+}
+
+.heading-section>label{
+    font-size: 1.5rem;
+    color: var(--ultimate-grey);
+}
+
+/* nav */
+nav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dire-wolf-dark);
+}
+
+nav>ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    list-style-type: none;
+}
+
+.nav-menu li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-menu span{
+    display: block;
+    font-size: 1.2rem;
+    color: var(--ultimate-grey);
+}
+
+.nav-menu a.active>span{
+    color: var(--butternut-squash);
+}
+.nav-menu a.active>svg>path{
+    stroke: var(--butternut-squash);
+}
+
+/* Carousel */
+.carousel{
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 8px 0;
+    width: 100%;
+    max-width: var(--max-width-content);
+    margin: 24px auto;
+}
+
+.carousel__item{
+    display: block;
+    flex-shrink: 0;
+    padding: 8px;
+    width: 100%;
+    max-width: 200px;
+    border-radius: var(--border-sm);
+    text-decoration: none;
+    background-color: var(--dire-wolf-dark);
+}
+.carousel__item--full{
+    max-width: 350px;
+    margin: 10px auto;
+}
+
+.carousel__item>p{
+    width: 100%;
+    overflow: hidden;
+    font-size: 1.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--dr-white);
+}
+
+.carousel__item small{
+    font-size: 1.2rem;
+    color: var(--mattherhorn-ligther);
+}
+
+.carousel__item span{
+    display: block;
+    padding: 2px 4px;
+    font-size: 1.2rem;
+    color: var(--dr-white);
+    border-radius: var(--border-sm);
+    background-color: var(--butternut-squash);
+}
+
+.carousel__item>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__input{
+    padding: 8px 16px;
+    border: 1px solid var(--mattherhorn);
+    border-radius: var(--border-sm);
+    color: var(--ultimate-grey);
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--dire-wolf-dark);
+}
+
+/* Container of courses */
+.my-courses__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.my-courses__item{
+    position: relative;
+    display: block;
+    width: 100%;
+    border-radius: var(--border-sm);
+    text-decoration: none;
+    background-color: var(--dire-wolf-dark);
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.4);
+}
+
+.my-courses__item>figure{
+    display: none;
+    width: 100%;
+    height: 140px;
+    background-color: var(--dire-wolf);
+}
+
+.my-courses__item>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.my-courses__item>div{
+    padding: 8px 16px;
+}
+
+.my-courses__item>div>p{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 1.6rem;
+    color: var(--dr-white);
+}
+
+.my-courses__item>div>div>span{
+    display: block;
+    font-size: 1.4rem;
+    color: var(--live);
+}
+
+.my-courses__item>div>div>small,
+.my-courses__item>div>small{
+    font-size: 1.4rem;
+    color: var(--ultimate-grey);
+}
+
+.my-courses__item>div>span{
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    border-radius: var(--border-sm);
+    padding: 2px 4px;
+    font-size: 1.4rem;
+    color: var(--dr-white);
+    background-color: var(--butternut-squash);
+}
+
+.my-course-heading>button{
+    display: none;
+}
+
+.my-courses__item{
+    max-width: 235px;
+}
+
+.my-courses__item>figure{
+    display: block;
+    border-top-right-radius: var(--border-sm);
+    border-top-left-radius: var(--border-sm);
+    overflow: hidden;
+}

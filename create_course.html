@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style-create_course.css">
+    <link rel="stylesheet" href="./css/style-create_course-desktop.css" media="screen and (min-width: 1000px)">
+    <title>Document</title>
+</head>
+<body>
+    <main class="main-content">
+        <h1>Publish Course</h1>
+        <h2>Course Data</h2>
+        <form class="form">
+            <div class="form__input">
+                <label class="form__placeholder" for="title">Title</label>
+                <input id="title" type="text" >
+            </div>
+            <div class="form__input">
+                <label class="form__placeholder" for="title">Write a description so users can understand more about the course</label>
+                <textarea name="" id="" cols="30" rows="5"></textarea>
+            </div>
+            <label class="form__label">Status</label>
+            <div class="form__input-radios">
+                <label class="form__radio" for="gender-male">
+                    <input id="gender-male" name="gender" type="radio">
+                    <div><span></span></div>
+                    <span>Active</span>
+                </label>
+                <label class="form__radio" for="gender-female">
+                    <input id="gender-female" checked name="gender" type="radio">
+                    <div><span></span></div>
+                    <span>Innactive</span>
+                </label>
+            </div>
+            <div class="form__input">
+                <label class="form__placeholder" for="category">Category</label>
+                <input id="category" type="text" >
+            </div>
+            <label class="button-add-pay" for="media">
+                <figure>
+                    <img src="./assets/images/plus-orange.png" alt="">
+                    <figcaption>Upload Cover Course</figcaption>
+                </figure>
+                <input class="inactive" type="file" name="" id="media">
+            </label>
+            <button class="btn">Create</button>
+        </form>
+    </main>
+    <nav>
+        <a class="nav__logo" href="">
+            <img src="./assets/images/fox-logo-sm.png" alt="">
+        </a>
+        <form class="nav__form" action="">
+            <input class="nav__search" type="text" name="" id="" placeholder="What are you looking for?...">
+        </form>
+        <ul class="nav-menu">
+            <li>
+                <a class="active" href="./index.html">
+                    <svg width="42" height="30" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.59598 19.5L7.59598 29H13.4271V22.0323H18.4417V29H33.596L33.596 19.5M7.59598 19.5L21.596 7.92857L33.596 19.5M7.59598 19.5L4.68432 22.3504L2 19L21.596 2L39.692 19L36.5076 22.3504L33.596 19.5M22.8092 25.5161H28.956V19.9736H22.8092V25.5161Z" stroke="#ABABAB" stroke-width="2"/>
+                    </svg>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="./search.html">
+                    <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.7615 17.8346C20.3176 16.1531 21.2661 13.9189 21.2661 11.4669C21.2661 6.23849 16.9532 2 11.633 2C6.31285 2 2 6.23849 2 11.4669C2 16.6954 6.31285 20.9339 11.633 20.9339C14.4582 20.9339 16.9994 19.7386 18.7615 17.8346ZM18.7615 17.8346L23.9269 23" stroke="#ABABAB" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="./index.html">
+                    <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.5 13.766C0.5 3.61332 5.66651 1 15.8191 1C25.9718 1 30.6277 3.61332 30.6277 13.766V25H14.7979C4.64523 25 0.5 23.9186 0.5 13.766Z" fill="#ABABAB" stroke="#ABABAB" stroke-linejoin="round"/>
+                        <path d="M8 9H16.5H25M8 13.7541H25M8 18H25" stroke="#241d20" stroke-width="2" stroke-linecap="round"/>
+                    </svg>                        
+                    <span>Messages</span>
+                </a>
+            </li>
+            <li>
+                <a href="./profile.html">
+                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.49573 7.85461C2.49573 11.5719 5.50922 14.5854 9.22656 14.5854C12.9439 14.5854 15.9574 11.5719 15.9574 7.85461C15.9574 4.13727 12.9439 1.12378 9.22656 1.12378C5.50922 1.12378 2.49573 4.13727 2.49573 7.85461Z" stroke="#ABABAB" stroke-width="2"/>
+                        <path d="M1.04875 23L3.69934 17.7096M18.0782 22.8423L15.21 17.603M3.69934 17.7096L9.37582 17.657L15.21 17.603M3.69934 17.7096L15.21 17.603" stroke="#ABABAB" stroke-width="2"/>
+                    </svg>
+                    <span>Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

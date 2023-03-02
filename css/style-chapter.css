@@ -1,0 +1,572 @@
+:root{
+    /* Background of page */
+    --eclipse:              #272425;
+    --live:                 #554C51;
+    /* Titles or important texts */
+    --dr-white:             #FAFAFA;
+    /* Special messages and elements */
+    --butternut-squash:     #FC7703;
+    /* Secondary  */
+    --butternut-squash-dark:#cf6508;
+    /* Secondary stuff */
+    --flood:                #657ED4;
+
+    /* for labels */
+    --mattherhorn:          #302b2e;
+    --mattherhorn-ligther:  #4F464B;
+    /* for inputs */
+    --ultimate-grey:        #ABABAB;
+    /* for a nav */
+    --dire-wolf:            #2C2428;
+    /* for a course card */
+    --dire-wolf-dark:       #241d20;
+
+
+    /* Borders */
+    --border-sm: 4px;
+
+    --max-width-content: 1000px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 24px;
+    background-color: var(--eclipse);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1, h2, h3{
+    font-weight: 900;
+    text-align: left;
+    color: var(--dr-white);
+}
+
+h1{
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+h2{
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 2.0rem;
+}
+
+h3{
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.main-content{
+    width: 100%;
+    max-width: var(--max-width-content);
+}
+
+/*Nav  */
+nav{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    padding: 8px 16px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dire-wolf-dark);
+}
+
+nav>ul{
+    flex-grow: 2;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 15px;
+    list-style-type: none;
+}
+
+.nav__logo{
+    flex-grow: 1;
+    display: none;
+    height: 46px;
+}
+
+.nav__logo>img{
+    height: 100%;
+}
+
+.nav__form{
+    display: none;
+    flex-grow: 2;
+}
+
+.nav__search{
+    width: 100%;
+    border: 1px solid var(--eclipse);
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    font-family: 'Nunito', cursive;
+    color: var(--ultimate-grey);
+    background-color: var(--eclipse);
+}
+
+.nav__search:hover{
+    border: 1px solid var(--mattherhorn-ligther);
+}
+
+.nav__search:focus{
+    color: var(--dr-white);
+    outline: 2px solid var(--butternut-squash);
+}
+
+.nav-menu li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-menu span{
+    display: block;
+    font-size: 1.2rem;
+    color: var(--ultimate-grey);
+}
+
+.nav-menu a.active>span{
+    color: var(--butternut-squash);
+}
+.nav-menu a.active>svg>path{
+    stroke: var(--butternut-squash);
+}
+
+/* General Styles */
+.description{
+    font-size: 1.3rem;
+    color: var(--ultimate-grey);
+}
+
+.backwards-button{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: block;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.mobile-heading{
+    display: flex;
+    gap: 15px;
+    margin: 24px 0;
+}
+
+.mobile-heading>h1{
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+}
+
+.link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--butternut-squash);
+}
+
+.link--heading{
+    font-size: 1.8rem;
+}
+
+.heading-section{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 12px auto;
+    width: 100%;
+    max-width: var(--max-width-content);
+}
+
+.heading-section>h2{
+    width: 100%;
+    margin: 4px 0;
+}
+
+.heading-section>label{
+    font-size: 1.5rem;
+    color: var(--ultimate-grey);
+}
+
+/* Header */
+.course-chapter__header{
+    position: relative;
+    width: 100%;
+}
+
+.course-chapter__header>video{
+    width: 100%;
+}
+
+.course-chapter__header h1, .course-chapter__header h2{
+    margin: 4px 0;
+}
+
+.course-chapter__header small{
+    display: block;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    color: var(--ultimate-grey);
+}
+
+.course-chapter__information{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+}
+
+.course-chapter__title{
+    width: 100%;
+}
+
+.course-chapter__buttons{
+    text-align: end;
+    width: 100%;
+}
+
+.course-chapter__buttons>button{
+    border: 1px solid var(--butternut-squash);
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    color: var(--dr-white);
+    background-color: var(--butternut-squash);
+}
+
+.course-chapter__buttons>button:first-of-type{
+    margin-right: 10px;
+}
+
+.course-chapter__buttons>button:last-of-type{
+    margin-left: 10px;
+}
+
+.course-chapter__information p{
+    font-size: 1.5rem;
+    color: var(--ultimate-grey);
+}
+
+/*  */
+.button-section{
+    padding: 8px 16px;
+}
+.button-section>button{
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    background-color: var(--dire-wolf-dark);
+}
+
+.button-section__tab{
+    border: 2px solid var(--dire-wolf-dark);
+    color: var(--ultimate-grey);
+}
+
+.button-section__tab--active{
+    color: var(--dr-white);
+    border-bottom: 2px solid var(--butternut-squash);
+}
+
+/* Chapter Chapters */
+.course-chapters{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 8px 16px;
+}
+
+.course-chapters__chapter{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 350px;
+    padding: 8px 16px;
+    margin: 8px 0;
+    border-radius: var(--border-sm);
+    text-decoration: none;
+    background-color: var(--dire-wolf-dark);
+}
+
+
+
+.course-chapters__chapter>figure{
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--eclipse);
+}
+.course-chapters__chapter>div{
+    flex-shrink: 0;
+    width: calc(100% - 56px);
+}
+
+.course-chapters__chapter p{
+    flex-shrink: 0;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1.5rem;
+    color: var(--dr-white);
+}
+
+.course-chapters__chapter small{
+    font-size: 1.2rem;
+    color: var(--ultimate-grey);
+}
+
+.course-chapters__chapter--active>figure{
+    background-color: var(--butternut-squash);
+}
+
+/* Form */
+.form-comment{
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 1.5rem;
+}
+
+.form-comment>textarea{
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid var(--mattherhorn);
+    border-radius: var(--border-sm);
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    color: var(--ultimate-grey);
+    background-color: var(--dire-wolf-dark);
+    resize: none;
+}
+
+.form-comment>textarea:focus{
+    outline: 2px solid var(--butternut-squash);
+}
+
+.form__input{
+    padding: 8px 16px;
+    border: 1px solid var(--mattherhorn);
+    border-radius: var(--border-sm);
+    color: var(--ultimate-grey);
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--dire-wolf-dark);
+}
+
+.form__input-radios{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 12px auto 24px;
+    color: var(--ultimate-grey);
+}
+
+.form__radio{
+    cursor: pointer;
+    position: relative;
+}
+
+.form__radio>div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border: 2px solid var(--ultimate-grey);
+    border-radius: 50%;
+
+    background-color: transparent;
+}
+
+.form__radio>div>span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+
+    transition: background-color 0.25s ease;
+}
+
+.form__radio>input{
+    visibility: hidden;
+}
+
+.form__radio>span{
+    margin-left: 10px;
+}
+
+.form__radio>input:checked ~ div>span{
+    background-color: var(--butternut-squash);
+    opacity: 1;
+}
+.form__radio>input:checked ~ div{
+    border: 2px solid var(--butternut-squash);
+}
+
+.form-comment__button{
+    display: block;
+    border: 1px solid var(--butternut-squash);
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    margin-left: auto;
+    font-size: 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dr-white);
+    background-color: var(--butternut-squash);
+}
+
+/* Comments */
+.comments-container{
+    padding: 8px 16px;
+}
+
+.comment{
+
+    font-size: 1.5rem;
+}
+.comment__header{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 0 12px;
+}
+.comment__header>figure{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--dire-wolf-dark);
+}
+
+.comment__header>figure>img{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.comment__header>p>span{
+    display: block;
+    font-size: 1.5rem;
+    color: var(--dr-white);
+}
+
+.comment__header>p>small{
+    font-size: 1.2rem;
+    color: var(--mattherhorn-ligther);
+}
+
+.comment>p{
+    color: var(--ultimate-grey);
+}
+
+.form__star>button>svg{
+    height: 15px;
+}
+
+@media screen and (min-width: 1000px) {
+    .course-chapter__buttons>button{
+        cursor: pointer;
+        transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .course-chapter__buttons>button:hover{
+        background-color: var(--eclipse);
+        color: var(--butternut-squash);
+    }
+
+    .course-chapter__header{
+        order: 1;
+    }
+    .course-chapters{
+        max-height: 560px;
+        overflow-y: auto;
+        order: 2;
+    }
+    .comments-section{
+        max-width: 70%;
+        order: 4;
+    }
+    .chapter-description{
+        margin: 0 auto;
+        order: 3;
+    }
+    .button-section{
+        display: none;
+    }
+    .course-chapter__header{
+        width: 70%;
+    }
+    .course-chapters{
+        width: 30%;
+    }
+    .form-comment>textarea{
+        height: 100px;
+    }
+
+    .course-chapters__chapter{
+        transition: background-color 0.25s ease;
+    }
+
+    .course-chapters__chapter:hover{
+        background-color: var(--dire-wolf);
+    }
+    .backwards-button{
+        display: none;
+    }
+
+    .form__input-radios{
+        justify-content: end;
+        gap: 45px;
+    }
+
+    .form-comment__button{
+        cursor: pointer;
+        transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .form-comment__button:hover{
+        background-color: var(--eclipse);
+        color: var(--butternut-squash);
+    }
+
+    .course-chapter__title{
+        width: 50%;
+    }
+
+    .course-chapter__buttons{
+        width: 50%;
+    }
+}

@@ -1,0 +1,334 @@
+:root{
+    /* Background of page */
+    --eclipse:              #272425;
+    --live:                 #554C51;
+    /* Titles or important texts */
+    --dr-white:             #FAFAFA;
+    /* Special messages and elements */
+    --butternut-squash:     #FC7703;
+    /* Secondary  */
+    --butternut-squash-dark:#cf6508;
+    /* Secondary stuff */
+    --flood:                #657ED4;
+
+    /* for labels */
+    --mattherhorn:          #302b2e;
+    --mattherhorn-ligther:  #4F464B;
+    /* for inputs */
+    --ultimate-grey:        #ABABAB;
+    /* for a nav */
+    --dire-wolf:            #2C2428;
+    /* for a course card */
+    --dire-wolf-dark:       #241d20;
+    /* for messages */
+    --sooty:                #171214ff;
+
+
+    /* Borders */
+    --border-sm: 4px;
+
+    --max-width-content: 1000px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--eclipse);
+}
+
+main{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1, h2, h3{
+    font-weight: 900;
+    text-align: left;
+    color: var(--dr-white);
+}
+
+h1{
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+}
+
+h2{
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 2.0rem;
+    color: var(--butternut-squash);
+}
+
+h3{
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.main-content{
+    width: 100%;
+    max-width: var(--max-width-content);
+}
+
+/* Nav */
+
+nav{
+    display: flex;
+    align-items: center;
+    position: fixed;
+    padding: 8px 16px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--dire-wolf-dark);
+}
+
+nav>ul{
+    flex-grow: 2;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 15px;
+    list-style-type: none;
+}
+
+.nav__logo{
+    flex-grow: 1;
+    display: none;
+    height: 46px;
+}
+
+.nav__logo>img{
+    height: 100%;
+}
+
+.nav__form{
+    display: none;
+    flex-grow: 2;
+}
+
+.nav__search{
+    width: 100%;
+    border: 1px solid var(--eclipse);
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    font-family: 'Nunito', cursive;
+    color: var(--ultimate-grey);
+    background-color: var(--eclipse);
+}
+
+.nav__search:hover{
+    border: 1px solid var(--mattherhorn-ligther);
+}
+
+.nav__search:focus{
+    color: var(--dr-white);
+    outline: 2px solid var(--butternut-squash);
+}
+
+.nav-menu li>a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-menu span{
+    display: block;
+    font-size: 1.2rem;
+    color: var(--ultimate-grey);
+}
+
+.nav-menu a.active>span{
+    color: var(--butternut-squash);
+}
+.nav-menu a.active>svg>path{
+    stroke: var(--butternut-squash);
+}
+
+/* Header section */
+.header-section{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+}
+
+.header-section>section{
+    display: flex;
+    gap: 15px;
+}
+
+.header-section__button{
+    border: none;
+    background-color: var(--eclipse);
+}
+
+/* Section where is detailed the course */
+.course{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+}
+
+.course__meta-information{
+    margin: 24px auto;
+}
+    
+
+.course__image{
+    border-radius: var(--border-sm);
+    width: 100%;
+    height: 200px;
+    max-width: 600px;
+    margin-bottom: 16px;
+    background-color: var(--dire-wolf-dark);
+}
+
+.course__desciption{
+    font-size: 1.5rem;
+    color: var(--ultimate-grey);
+}
+
+.course__categories{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 24px 0;
+}
+
+.course__category{
+    cursor: default;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border-radius: var(--border-sm);
+    width: fit-content;
+    min-height: 29px;
+    font-size: 1.5rem;
+    padding: 2px 8px;
+    color: var(--dr-white);
+    background-color: var(--butternut-squash);
+}
+
+.course__category>button{
+    border: none;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    background-color: var(--butternut-squash);
+}
+
+.course__category>button>img{
+    width: 100%;
+    height: 100%;
+}
+
+.btn{
+    cursor: pointer;
+    display: block;
+    padding: 8px 16px;
+    border-radius: var(--border-sm);
+    border: 1px solid var(--live);
+    font-size: 1.5rem;
+    font-family: 'Nunito', cursive;
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn--left{
+    margin-left: auto;
+}
+
+.btn--primary{
+    border: 1px solid var(--butternut-squash);
+    background-color: var(--butternut-squash);
+    color: var(--dr-white);
+}
+
+.btn--primary:hover{
+    background-color: var(--eclipse);
+    color: var(--butternut-squash);
+}
+
+/* Where all chapters are gonna be displayed */
+.chapters-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 24px auto;
+}
+
+/* Chapter item */
+.chapter{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: var(--border-sm);
+    background-color: var(--dire-wolf-dark);
+}
+
+.chapter__title{
+    font-size: 1.6rem;
+    color: var(--dr-white);
+}
+
+.chapter__duration{
+    font-size: 1.2rem;
+    color: var(--ultimate-grey);
+}
+
+.chatpter_options{
+    cursor: pointer;
+    display: block;
+    border-radius: 50%;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: var(--dire-wolf-dark);
+}
+.chatpter_options>img{
+    width: 100%;
+    
+}
+
+.inactive{
+    display: none;
+}
+
+@media screen and (min-width: 1000px) {
+    section>.header-section__button:first-of-type{
+        display: none;
+    }
+
+    .course{
+        gap: 10px;
+    }
+
+    .course__first, .course_second{
+        width: calc(50% - 10px);
+    }
+
+    .chatpter_options{
+        transition: background-color 0.25s ease;
+    }
+
+    .chatpter_options:hover{
+        background-color: var(--dire-wolf);
+    }
+}

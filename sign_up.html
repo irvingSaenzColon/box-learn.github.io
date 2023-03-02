@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style-sign_up.css">
+</head>
+<body>
+    <form class="form" autocomplete="off">
+        <h1>Crea tu cuenta en Fox Bite</h1>
+        <!-- Section for personal data -->        
+        <section data-active="true">
+            <h2>Datos personales</h2>
+            <div class="form__input" tabindex="0">
+                <label class="form__placeholder" for="name">Nombre</label>
+                <input id="name" type="text" autocomplete="do-not-autofill" >
+            </div>
+            <div class="form__input-group" >
+               <div class="form__input--half">
+                    <div class="form__input " tabindex="1">
+                        <label class="form__placeholder" for="lastname-p">Apellido Paterno</label>
+                        <input id="lastname-p" type="text" autocomplete="do-not-autofill">
+                    </div>
+               </div>
+                <div class="form__input--half">
+                    <div class="form__input" tabindex="2">
+                        <label class="form__placeholder" for="lastname-m">Apellido Materno</label>
+                        <input id="lastname-m" type="text" autocomplete="do-not-autofill">
+                    </div>
+                </div>
+            </div>
+            <label class="form__label">Género</label>
+            <div class="form__input-radios">
+                <label class="form__radio" for="gender-male">
+                    <input id="gender-male" name="gender" type="radio">
+                    <div><span></span></div>
+                    <span>Hombre</span>
+                </label>
+                <label class="form__radio" for="gender-female">
+                    <input id="gender-female" checked name="gender" type="radio">
+                    <div><span></span></div>
+                    <span>Mujer</span>
+                </label>
+                
+                <label class="form__radio" for="gender-other">
+                    <input id="gender-other" name="gender" type="radio">
+                    <div><span></span></div>
+                    <span>Otro</span>
+                </label>
+            </div>
+            <div class="form__input" tabindex="3">
+                <label class="form__placeholder" for="birthdate">Fecha de Nacimiento</label>
+                <input id="birthdate" type="date" autocomplete="off">
+            </div>
+        </section>
+        <!-- Section for data account -->
+        <section class="inactive" data-active="false">
+            <h2>Datos de cuenta</h2>
+            <div class="form__input" tabindex="4">
+                <label class="form__placeholder" for="email" >Correo electrónico</label>
+                <input id="email"  type="email" autocomplete="do-not-autofill">
+            </div>
+            <div class="form__input" tabindex="5">
+                <label class="form__placeholder" for="password">Contraseña</label>
+                <input id="password" type="password" name="password" autocomplete="do-not-autofill">
+            </div>
+            <div class="form__input" tabindex="6">
+                <label class="form__placeholder" for="c-password">Confirmar contraseña</label>
+                <input id="c-password" type="password" name="c-password" autocomplete="do-not-autofill">
+            </div>
+            
+            <label class="form__input-check" for="see-password">
+                <input id="see-password" name="see-password" type="checkbox">
+                <div></div>
+                <span>Mostrar contraseña</span>
+            </label>
+            
+        </section>
+        <!-- Section to select profile image -->
+        <section class="inactive" data-active="false">
+            <h2>Imagen de perfil</h2>
+            <img id="profile-img" class="form__image" src="./assets/images/147144.png" alt="Represents avatar of user">
+            <label class="form__button form__button--primary" for="profile-image">Elige una imagen de perfil</label>
+            <input id="profile-image" name="image" type="file">
+        </section>
+        <div class="form__page form__page--one">
+            <button type="button" class="form__button form__button--half form__button--secondary inactive">Atrás</button>
+            <button type="button" class="form__button form__button--half form__button--primary">Siguiente</button>
+            <button type="submit" class="form__button form__button--half form__button--primary inactive">Registrar</button>
+        </div>
+    </form>
+
+    <section>
+        <p>¿Ya tienes una cuenta?</p>
+        <a href="./sign_in.html">Inicia Sesión aquí</a>
+    </section>
+
+    <script src="./js/sign-up.js"></script>
+</body>
+</html>

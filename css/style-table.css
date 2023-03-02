@@ -1,0 +1,16 @@
+nav>ul{
+    justify-content: space-evenly;
+}
+
+.card {
+    height: 120px;
+    max-width: calc((100% - 30px) / 4);;
+}
+.card>p{
+    padding: 0 16px 0 8px;
+}
+
+.card--continue{
+    width: 100%;
+    max-width: calc((100% - 30px) / 4);;
+}

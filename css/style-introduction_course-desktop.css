@@ -1,0 +1,27 @@
+nav{
+    position: sticky;
+    gap: 15px;
+    top: 0;
+    order: 1;
+}
+
+.nav__logo{
+    display: block;
+    flex-grow: 0;
+}
+
+.nav__form{
+    display: block;
+}
+
+nav>ul{
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+.course-introduction{
+    order: 2;
+}
+.course-chapters{
+    order: 3;
+}
