@@ -53,6 +53,7 @@ body{
 main{
     width: 100%;
     max-width: var(--max-width-content);
+    margin: 0 auto;
 }
 
 h1, h2, h3{
@@ -243,7 +244,7 @@ nav>ul{
 }
 
 .container--lager{
-    max-width: 800px;
+    max-width: unset;
 }
 
 .container--fade-out-right{
@@ -344,6 +345,7 @@ nav>ul{
     border-radius: var(--border-sm);
     font-size: 1.5rem;
     text-align: left;
+    text-decoration: none;
     color: var(--dr-white);
     background-color: var(--dire-wolf-dark);
 }
@@ -460,8 +462,6 @@ nav>ul{
 /* Teacher section */
 .courses-table{
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
     border-collapse: separate;
     border-spacing: 4px;
 }

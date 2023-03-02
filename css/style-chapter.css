@@ -492,6 +492,10 @@ nav>ul{
     color: var(--ultimate-grey);
 }
 
+.form__star>button>svg{
+    height: 15px;
+}
+
 @media screen and (min-width: 1000px) {
     .course-chapter__buttons>button{
         cursor: pointer;

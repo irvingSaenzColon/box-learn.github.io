@@ -18,17 +18,17 @@ function onLoad(event){
         button.addEventListener('click', onClickBackOption);
     });
 
-    // const btnAdvancedSearch = document.getElementById('main-table-advanced');
-    // console.log(btnAdvancedSearch);
-    // const detailAdvancedSearch = document.getElementById('detail-filter-advanced');
-    // const tableRows = document.querySelectorAll('section#teacher-main-table>div>table>tbody>tr');
-    // console.log(tableRows);
-    // [...tableRows].forEach(function(row){
-    //     row.addEventListener('click', onClickDetail);
-    // });
+    const btnAdvancedSearch = document.getElementById('main-table-advanced');
+    console.log(btnAdvancedSearch);
+    const detailAdvancedSearch = document.getElementById('detail-filter-advanced');
+    const tableRows = document.querySelectorAll('section#teacher-main-table>div>table>tbody>tr');
+    console.log(tableRows);
+    [...tableRows].forEach(function(row){
+        row.addEventListener('click', onClickDetail);
+    });
 
-    // btnAdvancedSearch.addEventListener('click', onShowAdvancedFilter);
-    // detailAdvancedSearch.addEventListener('click', onShowAdvancedFilter);
+    btnAdvancedSearch.addEventListener('click', onShowAdvancedFilter);
+    detailAdvancedSearch.addEventListener('click', onShowAdvancedFilter);
 
 }
 

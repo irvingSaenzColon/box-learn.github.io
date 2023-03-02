@@ -318,6 +318,7 @@ nav>ul{
 }
 
 .btn{
+    cursor: pointer;
     display: block;
     padding: 12px 64px;
     margin: 24px auto;
@@ -326,4 +327,36 @@ nav>ul{
     font-size: 1.5rem;
     color: var(--dr-white);
     background-color: var(--butternut-squash);
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn:hover{
+    background-color: var(--eclipse);
+    color: var(--butternut-squash);
+}
+
+.button-add-pay{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 183px;
+    width: 100%;
+    border: 1px dashed var(--butternut-squash);
+    border-radius: var(--border-sm);
+    font-size: 1.8rem;
+    background-color: var(--eclipse);
+    color: var(--butternut-squash);
+}
+
+.button-add-pay>figure{
+    text-align: center;
+}
+.button-add-pay>figure>img{
+    margin-bottom: 8px;
+}
+
+.inactive{
+    display: none;
 }
