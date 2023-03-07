@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,23 +12,32 @@
     <link rel="stylesheet" href="./css/style-profile-desktop.css" media="screen and (min-width: 1000px)">
     <title>Profile</title>
 </head>
+
 <body>
 
     <header class="profile-information">
+
         <figure class="profile-information__image">
-            <img src="./assets/images/147144.png" alt="">
+            <div id="current-image-container" tabindex="0" data-belong="profile-image-form">
+                <img id="current-profile-image" src="./assets/images/147144.png" alt="Represents the avatar of user">
+                <button class="form__edit-image">Cambiar imagen de perfil</button>
+            </div>
+            
             <figcaption>
                 <p>Nickname</p>
                 <p>User Name</p>
             </figcaption>
         </figure>
         <section>
+                <button id="open-edit-data" class="profile-information__edit-btn" data-belong="data-account-form">
+                    <img src="./assets/images/gear.png" alt="">
+                </button>
             <p class="profile-information__group__status">I love programming and chipotle</p>
             <p class="profile-information__group">
                 <img src="./assets/images/male.png" alt="">
                 <span>Gender</span>
             </p>
-            <p class="profile-information__group"> 
+            <p class="profile-information__group">
                 <img src="./assets/images/cake.png" alt="">
                 <span>24/06/1997</span>
             </p>
@@ -36,8 +46,79 @@
                 <span>mary.example@gmail.com</span>
             </p>
         </section>
+        <dialog id="wrapper" class="wrapper wrapper--flex inactive">
+            <form class="form inactive" id="profile-image-form">
+                <h2>Profile Image</h2>
+                <button type="button" class="form__close">
+                    <img src="./assets/icons/close.svg" alt="" srcset="">
+                </button>
+                <figure class="form__preview-image">
+                    <img src="./assets/images/147144.png" alt="">
+                    <button class="form__edit-image">Cambiar imagen de perfil</button>
+                </figure>
+                <label class="form__fake-button" for="profile-image">
+                    <span>Choose an image</span>
+                    <input type="file" name="profile-image" id="profile-image">
+                </label>
+                <button class="form__button form__button--primary">Edit</button>
+            </form>
+            <form class="form inactive" id="data-account-form">
+                <h2>Data account</h2>
+                <button type="button" class="form__close">
+                    <img src="./assets/icons/close.svg" alt="" srcset="">
+                </button>
+                <button type="button" class="form__close">
+                    <img src="./assets/icons/close.svg" alt="" srcset="">
+                </button>
+                <div class="form__input" tabindex="0">
+                    <label class="form__placeholder" for="name">Name</label>
+                    <input id="name" type="text">
+                </div>
+                <div class="form__input" tabindex="1">
+                    <label class="form__placeholder" for="lastname-p">Lastname</label>
+                    <input id="lastname-p" type="text">
+                </div>
+                <div class="form__input" tabindex="2">
+                    <label class="form__placeholder" for="lastname-m">Lastname</label>
+                    <input id="lastname-m" type="text">
+                </div>
+                <div class="form__input" tabindex="3">
+                    <label class="form__placeholder" for="birthdate">Birthdate</label>
+                    <input id="birthdate" type="date">
+                </div>
+                <label class="form__label form__label--text-white">Género</label>
+                <div class="form__input-radios">
+                    <label class="form__radio" for="gender-male">
+                        <input id="gender-male" name="gender" type="radio">
+                        <div><span></span></div>
+                        <span>Hombre</span>
+                    </label>
+                    <label class="form__radio" for="gender-female">
+                        <input id="gender-female" checked name="gender" type="radio">
+                        <div><span></span></div>
+                        <span>Mujer</span>
+                    </label>
+
+                    <label class="form__radio" for="gender-other">
+                        <input id="gender-other" name="gender" type="radio">
+                        <div><span></span></div>
+                        <span>Otro</span>
+                    </label>
+                </div>
+
+                <div class="form__input" tabindex="4">
+                    <label class="form__placeholder" for="name">Nickame</label>
+                    <input id="nickname" type="text">
+                </div>
+                <div class="form__input" tabindex="5">
+                    <label class="form__placeholder" for="name">Status</label>
+                    <input id="status" type="text">
+                </div>
+                <button class="form__button form__button--primary">Edit</button>
+            </form>
+        </dialog>
     </header>
-    <main id="student-stats" class="inactive">
+    <main id="student-stats">
         <h2 class="main-title">My Stats</h2>
         <section id="student-options" class="button-grid">
             <button class="button-grid__button button-grid__button--flood">
@@ -56,6 +137,18 @@
                 <img src="./assets/images/book.png" alt="">
                 All Courses
             </button>
+            <a href="./my_stats.html" class="button-grid__button button-grid__button--flood">
+                <img src="./assets/images/graph.png" alt="">
+                My Stats
+            </a>
+            <a href="./pay_methods.html" class="button-grid__button button-grid__button--fantasy-romance">
+                <img src="./assets/images/dollar.png" alt="">
+                My Pay Methods
+            </a>
+            <a href="./pay_methods.html" class="button-grid__button button-grid__button--fantasy-romance">
+                <img src="./assets/images/dollar.png" alt="">
+                Security
+            </a>
         </section>
         <section class="inactive container" data-container-type="progress">
             <div class="heading-section heading-section--no-justify">
@@ -132,10 +225,10 @@
         </section>
         <section class="inactive container" data-container-type="all courses">
             <div class="heading-section heading-section--no-justify">
-                    <button class="heading-section__button-no-bg" data-backwards="true">
-                        <img src="./assets/images/left-arrow.png" alt="">
-                    </button>
-                    <h2>All Courses</h2>
+                <button class="heading-section__button-no-bg" data-backwards="true">
+                    <img src="./assets/images/left-arrow.png" alt="">
+                </button>
+                <h2>All Courses</h2>
             </div>
             <div class="heading-section">
                 <label for="">Filtered By</label>
@@ -174,21 +267,15 @@
             </article>
         </section>
     </main>
-    <main id="teacher-stats">
+    <main id="teacher-stats" class="inactive">
         <h2 class="main-title">Options</h2>
         <section id="teacher-options" class="button-grid">
-            <button class="button-grid__button button-grid__button--flood">
-                <img src="./assets/images/graph.png" alt="">
-                My Stats
-            </button>
+            
             <a href="./my_courses.html" class="button-grid__button button-grid__button--poisonous-potion">
                 <img src="./assets/images/book.png" alt="">
                 My Courses
             </a>
-            <a href="./pay_methods.html" class="button-grid__button button-grid__button--fantasy-romance">
-                <img src="./assets/images/dollar.png" alt="">
-                My Pay Methods
-            </a>
+            
         </section>
         <section id="teacher-main-table" class="container container--lager">
             <div class="heading-section">
@@ -197,7 +284,7 @@
                     <img src="./assets/images/gear.png" alt="">
                 </button>
             </div>
-           <div>
+            <div>
                 <form class="inactive form-filter">
                     <div class="form-filter__group">
                         <label class="form-filter__input" for="begin-date">
@@ -218,7 +305,7 @@
                             <option value="">Backend</option>
                         </select>
                     </label>
-                    
+
                     <label class="form-filter__input" for="status">
                         <span>Status Course</span>
                         <select name="" id="status">
@@ -226,7 +313,7 @@
                             <option value="">Actives</option>
                         </select>
                     </label>
-                    
+
                 </form>
                 <table class="courses-table">
                     <thead>
@@ -256,7 +343,7 @@
                         </tr>
                     </tbody>
                 </table>
-           </div>
+            </div>
 
             <p class="total"><span>Total revenue from all courses</span> <b>$ 2,880.00</b></p>
         </section>
@@ -285,7 +372,7 @@
                         <input type="date" name="" id="end-date">
                     </label>
                 </div>
-                
+
                 <label class="form-filter__input" for="category">
                     <span>Categorias</span>
                     <select name="" id="category">
@@ -294,7 +381,7 @@
                         <option value="">Backend</option>
                     </select>
                 </label>
-                
+
                 <label class="form-filter__input" for="status">
                     <span>Status Course</span>
                     <select name="" id="status">
@@ -302,7 +389,7 @@
                         <option value="">Actives</option>
                     </select>
                 </label>
-                
+
             </form>
 
             <div>
@@ -353,7 +440,9 @@
             <li>
                 <a class="active" href="./index.html">
                     <svg width="42" height="30" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.59598 19.5L7.59598 29H13.4271V22.0323H18.4417V29H33.596L33.596 19.5M7.59598 19.5L21.596 7.92857L33.596 19.5M7.59598 19.5L4.68432 22.3504L2 19L21.596 2L39.692 19L36.5076 22.3504L33.596 19.5M22.8092 25.5161H28.956V19.9736H22.8092V25.5161Z" stroke="#ABABAB" stroke-width="2"/>
+                        <path
+                            d="M7.59598 19.5L7.59598 29H13.4271V22.0323H18.4417V29H33.596L33.596 19.5M7.59598 19.5L21.596 7.92857L33.596 19.5M7.59598 19.5L4.68432 22.3504L2 19L21.596 2L39.692 19L36.5076 22.3504L33.596 19.5M22.8092 25.5161H28.956V19.9736H22.8092V25.5161Z"
+                            stroke="#ABABAB" stroke-width="2" />
                     </svg>
                     <span>Home</span>
                 </a>
@@ -361,7 +450,9 @@
             <li>
                 <a href="./search.html">
                     <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.7615 17.8346C20.3176 16.1531 21.2661 13.9189 21.2661 11.4669C21.2661 6.23849 16.9532 2 11.633 2C6.31285 2 2 6.23849 2 11.4669C2 16.6954 6.31285 20.9339 11.633 20.9339C14.4582 20.9339 16.9994 19.7386 18.7615 17.8346ZM18.7615 17.8346L23.9269 23" stroke="#ABABAB" stroke-width="3" stroke-linecap="round"/>
+                        <path
+                            d="M18.7615 17.8346C20.3176 16.1531 21.2661 13.9189 21.2661 11.4669C21.2661 6.23849 16.9532 2 11.633 2C6.31285 2 2 6.23849 2 11.4669C2 16.6954 6.31285 20.9339 11.633 20.9339C14.4582 20.9339 16.9994 19.7386 18.7615 17.8346ZM18.7615 17.8346L23.9269 23"
+                            stroke="#ABABAB" stroke-width="3" stroke-linecap="round" />
                     </svg>
                     <span>Search</span>
                 </a>
@@ -369,17 +460,24 @@
             <li>
                 <a href="./messages.html">
                     <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 13.766C0.5 3.61332 5.66651 1 15.8191 1C25.9718 1 30.6277 3.61332 30.6277 13.766V25H14.7979C4.64523 25 0.5 23.9186 0.5 13.766Z" fill="#ABABAB" stroke="#ABABAB" stroke-linejoin="round"/>
-                        <path d="M8 9H16.5H25M8 13.7541H25M8 18H25" stroke="#241d20" stroke-width="2" stroke-linecap="round"/>
-                    </svg>                        
+                        <path
+                            d="M0.5 13.766C0.5 3.61332 5.66651 1 15.8191 1C25.9718 1 30.6277 3.61332 30.6277 13.766V25H14.7979C4.64523 25 0.5 23.9186 0.5 13.766Z"
+                            fill="#ABABAB" stroke="#ABABAB" stroke-linejoin="round" />
+                        <path d="M8 9H16.5H25M8 13.7541H25M8 18H25" stroke="#241d20" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
                     <span>Messages</span>
                 </a>
             </li>
             <li>
                 <a href="./profile.html">
                     <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.49573 7.85461C2.49573 11.5719 5.50922 14.5854 9.22656 14.5854C12.9439 14.5854 15.9574 11.5719 15.9574 7.85461C15.9574 4.13727 12.9439 1.12378 9.22656 1.12378C5.50922 1.12378 2.49573 4.13727 2.49573 7.85461Z" stroke="#ABABAB" stroke-width="2"/>
-                        <path d="M1.04875 23L3.69934 17.7096M18.0782 22.8423L15.21 17.603M3.69934 17.7096L9.37582 17.657L15.21 17.603M3.69934 17.7096L15.21 17.603" stroke="#ABABAB" stroke-width="2"/>
+                        <path
+                            d="M2.49573 7.85461C2.49573 11.5719 5.50922 14.5854 9.22656 14.5854C12.9439 14.5854 15.9574 11.5719 15.9574 7.85461C15.9574 4.13727 12.9439 1.12378 9.22656 1.12378C5.50922 1.12378 2.49573 4.13727 2.49573 7.85461Z"
+                            stroke="#ABABAB" stroke-width="2" />
+                        <path
+                            d="M1.04875 23L3.69934 17.7096M18.0782 22.8423L15.21 17.603M3.69934 17.7096L9.37582 17.657L15.21 17.603M3.69934 17.7096L15.21 17.603"
+                            stroke="#ABABAB" stroke-width="2" />
                     </svg>
                     <span>Profile</span>
                 </a>
@@ -388,4 +486,5 @@
     </nav>
     <script src="./js/profile.js"></script>
 </body>
+
 </html>

@@ -7,6 +7,8 @@ const studentContainers = document.querySelectorAll('section.container');
 
 window.addEventListener('load', onLoad);
 
+
+
 // Load Functions
 function onLoad(event){
 
@@ -18,17 +20,32 @@ function onLoad(event){
         button.addEventListener('click', onClickBackOption);
     });
 
-    const btnAdvancedSearch = document.getElementById('main-table-advanced');
-    console.log(btnAdvancedSearch);
-    const detailAdvancedSearch = document.getElementById('detail-filter-advanced');
-    const tableRows = document.querySelectorAll('section#teacher-main-table>div>table>tbody>tr');
-    console.log(tableRows);
-    [...tableRows].forEach(function(row){
-        row.addEventListener('click', onClickDetail);
+    const currentImgContainer = document.getElementById('current-image-container');
+    const formCloseBtns = document.querySelectorAll('form>button[type="button"]');
+    [...formCloseBtns].forEach(function(closeBtn){
+        closeBtn.addEventListener('click', onCloseEditForm);
     });
+    currentImgContainer.addEventListener('mouseenter', onEnterProfileImg);
+    currentImgContainer.addEventListener('mouseleave', onLeaveProfileImg);
+    currentImgContainer. addEventListener('click', onOpenEditForm);
 
-    btnAdvancedSearch.addEventListener('click', onShowAdvancedFilter);
-    detailAdvancedSearch.addEventListener('click', onShowAdvancedFilter);
+    const openEditDataBtn = document.getElementById('open-edit-data');
+    openEditDataBtn.addEventListener('click', onOpenEditForm);
+    
+
+
+
+    // const btnAdvancedSearch = document.getElementById('main-table-advanced');
+    // console.log(btnAdvancedSearch);
+    // const detailAdvancedSearch = document.getElementById('detail-filter-advanced');
+    // const tableRows = document.querySelectorAll('section#teacher-main-table>div>table>tbody>tr');
+    // console.log(tableRows);
+    // [...tableRows].forEach(function(row){
+    //     row.addEventListener('click', onClickDetail);
+    // });
+
+    // btnAdvancedSearch.addEventListener('click', onShowAdvancedFilter);
+    // detailAdvancedSearch.addEventListener('click', onShowAdvancedFilter);
 
 }
 
@@ -86,6 +103,51 @@ function onClickDetail(event){
         containerFadeIn(nextContainer, 'right', 500);
     });
 
+}
+
+function onOpenEditForm(event){
+    const wrapper = document.getElementById('wrapper');
+    
+    const id = event.target.closest('div')?.getAttribute('data-belong') ? event.target.closest('div')?.getAttribute('data-belong')  :  event.target.closest('button').getAttribute('data-belong');
+    const form = document.getElementById(id);
+
+    if(wrapper.classList.contains('inactive'))
+        wrapper.classList.remove('inactive');
+
+    if(form.classList.contains('inactive'))
+        form.classList.remove('inactive');
+
+}
+
+function onCloseEditForm(event){
+    const form = event.target.closest('form');
+    const wrapper = document.getElementById('wrapper');
+
+    if(!form.classList.contains('inactive')){
+        form.classList.add('inactive');
+    }
+    if(!wrapper.classList.contains('inactive')){
+        wrapper.classList.add('inactive');
+    }
+}
+
+// Mouse Enter Functions
+function onEnterProfileImg(event){
+    const div = event.target.closest('div');
+    const button = div.querySelector('button');
+
+    if(!button.classList.contains('flex'))
+        button.classList.add('flex');
+
+}
+
+// Mouse Leave Functions
+function onLeaveProfileImg(event){
+    const div = event.target.closest('div');
+    const button = div.querySelector('button');
+
+    if(button.classList.contains('flex'))
+        button.classList.remove('flex');
 }
 
 // Animatoins Functions

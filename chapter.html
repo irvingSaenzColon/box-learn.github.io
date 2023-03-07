@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="./css/style-chapter-desktop.css" media="screen and (min-width:1000px)">
     <title>Chapter</title>
 </head>
+
 <body>
     <main class="main-content">
         <header class="course-chapter__header">
@@ -32,7 +34,9 @@
                 </div>
                 <div class="course-chapter__description">
                     <h3>Description</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum animi reprehenderit molestias nisi molestiae repellendus qui sint aut aliquam vel est debitis accusamus expedita perspiciatis inventore, voluptatem quae ullam sequi?</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum animi reprehenderit molestias
+                        nisi molestiae repellendus qui sint aut aliquam vel est debitis accusamus expedita perspiciatis
+                        inventore, voluptatem quae ullam sequi?</p>
                 </div>
             </div>
         </header>
@@ -108,7 +112,7 @@
             <div class="comments-container">
                 <h3>Comments</h3>
                 <section class="heading-section">
-                    <label for="order-by" >Order by</label>
+                    <label for="order-by">Order by</label>
                     <select class="form__input" name="" id="order-by">
                         <option value="">Latest</option>
                         <option value="">Questions</option>
@@ -125,29 +129,48 @@
                             <small>2023/02/17</small>
                         </p>
                     </section>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium voluptas laboriosam, labore incidunt ullam minus </p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium voluptas laboriosam, labore
+                        incidunt ullam minus </p>
                 </article>
             </div>
         </section>
-        <dialog style="display: block;">
+        <dialog style="display: none;" class="modal">
             <form class="form">
-                <section>
-                    <div class="form__star">
-                        <button type="button">
-                            <svg width="20" height="36" viewBox="0 0 20 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 27.3881L8.2 35L11.8 22.3134L1 13.6866H14.8857L19 1V27.3881Z" fill="#ABABAB" stroke="#ABABAB" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                        <button type="button">
-                            <svg width="20" height="36" viewBox="0 0 20 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.999998 27.3881L11.8 35L8.2 22.3134L19 13.6866H5.11428L0.999998 1V27.3881Z" fill="#ABABAB" stroke="#ABABAB" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
+                <section class="form__stars">
+                    <button class="form__star" type="button">
+                        <svg width="20" height="25" viewBox="0 0 38 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 26.5L8.5 34L12 21.5L1 13H14.5L19 0.5L23.5 13H37L26 21.5L30 34L19 26.5Z"
+                                fill="#ABABAB" stroke="#ABABAB" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="form__star" type="button">
+                        <svg width="20" height="25" viewBox="0 0 38 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 26.5L8.5 34L12 21.5L1 13H14.5L19 0.5L23.5 13H37L26 21.5L30 34L19 26.5Z"
+                                fill="#ABABAB" stroke="#ABABAB" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="form__star" type="button">
+                        <svg width="20" height="25" viewBox="0 0 38 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 26.5L8.5 34L12 21.5L1 13H14.5L19 0.5L23.5 13H37L26 21.5L30 34L19 26.5Z"
+                                fill="#ABABAB" stroke="#ABABAB" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="form__star" type="button">
+                        <svg width="20" height="25" viewBox="0 0 38 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 26.5L8.5 34L12 21.5L1 13H14.5L19 0.5L23.5 13H37L26 21.5L30 34L19 26.5Z"
+                                fill="#ABABAB" stroke="#ABABAB" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="form__star" type="button">
+                        <svg width="20" height="25" viewBox="0 0 38 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 26.5L8.5 34L12 21.5L1 13H14.5L19 0.5L23.5 13H37L26 21.5L30 34L19 26.5Z"
+                                fill="#ABABAB" stroke="#ABABAB" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
                 </section>
-                <label for=""></label>
-                <textarea name="" id="" cols="30" rows="6"></textarea>
-                <button>Send</button>
+                <label class="form__label" for="">Comment</label>
+                <textarea class="form__textarea" name="" id="" cols="30" rows="5" placeholder="Share your thoughts about the course"></textarea>
+                <button class="form__submit">Send</button>
             </form>
         </dialog>
     </main>
@@ -162,7 +185,9 @@
             <li>
                 <a class="active" href="./index.html">
                     <svg width="42" height="30" viewBox="0 0 42 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7.59598 19.5L7.59598 29H13.4271V22.0323H18.4417V29H33.596L33.596 19.5M7.59598 19.5L21.596 7.92857L33.596 19.5M7.59598 19.5L4.68432 22.3504L2 19L21.596 2L39.692 19L36.5076 22.3504L33.596 19.5M22.8092 25.5161H28.956V19.9736H22.8092V25.5161Z" stroke="#ABABAB" stroke-width="2"/>
+                        <path
+                            d="M7.59598 19.5L7.59598 29H13.4271V22.0323H18.4417V29H33.596L33.596 19.5M7.59598 19.5L21.596 7.92857L33.596 19.5M7.59598 19.5L4.68432 22.3504L2 19L21.596 2L39.692 19L36.5076 22.3504L33.596 19.5M22.8092 25.5161H28.956V19.9736H22.8092V25.5161Z"
+                            stroke="#ABABAB" stroke-width="2" />
                     </svg>
                     <span>Home</span>
                 </a>
@@ -170,7 +195,9 @@
             <li>
                 <a href="./search.html">
                     <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.7615 17.8346C20.3176 16.1531 21.2661 13.9189 21.2661 11.4669C21.2661 6.23849 16.9532 2 11.633 2C6.31285 2 2 6.23849 2 11.4669C2 16.6954 6.31285 20.9339 11.633 20.9339C14.4582 20.9339 16.9994 19.7386 18.7615 17.8346ZM18.7615 17.8346L23.9269 23" stroke="#ABABAB" stroke-width="3" stroke-linecap="round"/>
+                        <path
+                            d="M18.7615 17.8346C20.3176 16.1531 21.2661 13.9189 21.2661 11.4669C21.2661 6.23849 16.9532 2 11.633 2C6.31285 2 2 6.23849 2 11.4669C2 16.6954 6.31285 20.9339 11.633 20.9339C14.4582 20.9339 16.9994 19.7386 18.7615 17.8346ZM18.7615 17.8346L23.9269 23"
+                            stroke="#ABABAB" stroke-width="3" stroke-linecap="round" />
                     </svg>
                     <span>Search</span>
                 </a>
@@ -178,17 +205,24 @@
             <li>
                 <a href="./index.html">
                     <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.5 13.766C0.5 3.61332 5.66651 1 15.8191 1C25.9718 1 30.6277 3.61332 30.6277 13.766V25H14.7979C4.64523 25 0.5 23.9186 0.5 13.766Z" fill="#ABABAB" stroke="#ABABAB" stroke-linejoin="round"/>
-                        <path d="M8 9H16.5H25M8 13.7541H25M8 18H25" stroke="#241d20" stroke-width="2" stroke-linecap="round"/>
-                    </svg>                        
+                        <path
+                            d="M0.5 13.766C0.5 3.61332 5.66651 1 15.8191 1C25.9718 1 30.6277 3.61332 30.6277 13.766V25H14.7979C4.64523 25 0.5 23.9186 0.5 13.766Z"
+                            fill="#ABABAB" stroke="#ABABAB" stroke-linejoin="round" />
+                        <path d="M8 9H16.5H25M8 13.7541H25M8 18H25" stroke="#241d20" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
                     <span>Messages</span>
                 </a>
             </li>
             <li>
                 <a href="./profile.html">
                     <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2.49573 7.85461C2.49573 11.5719 5.50922 14.5854 9.22656 14.5854C12.9439 14.5854 15.9574 11.5719 15.9574 7.85461C15.9574 4.13727 12.9439 1.12378 9.22656 1.12378C5.50922 1.12378 2.49573 4.13727 2.49573 7.85461Z" stroke="#ABABAB" stroke-width="2"/>
-                        <path d="M1.04875 23L3.69934 17.7096M18.0782 22.8423L15.21 17.603M3.69934 17.7096L9.37582 17.657L15.21 17.603M3.69934 17.7096L15.21 17.603" stroke="#ABABAB" stroke-width="2"/>
+                        <path
+                            d="M2.49573 7.85461C2.49573 11.5719 5.50922 14.5854 9.22656 14.5854C12.9439 14.5854 15.9574 11.5719 15.9574 7.85461C15.9574 4.13727 12.9439 1.12378 9.22656 1.12378C5.50922 1.12378 2.49573 4.13727 2.49573 7.85461Z"
+                            stroke="#ABABAB" stroke-width="2" />
+                        <path
+                            d="M1.04875 23L3.69934 17.7096M18.0782 22.8423L15.21 17.603M3.69934 17.7096L9.37582 17.657L15.21 17.603M3.69934 17.7096L15.21 17.603"
+                            stroke="#ABABAB" stroke-width="2" />
                     </svg>
                     <span>Profile</span>
                 </a>
@@ -196,4 +230,5 @@
         </ul>
     </nav>
 </body>
+
 </html>

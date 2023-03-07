@@ -278,7 +278,7 @@ nav>ul{
 /*  */
 .profile-information{
     width: 100%;
-    max-width: 320px;
+    max-width: var(--max-width-content);
     margin: 8px auto 24px;
     border-bottom: 1px solid var(--mattherhorn);
     font-size: 1.5rem;
@@ -295,12 +295,19 @@ nav>ul{
     color: var(--dr-white);
 }
 
-.profile-information__image>img{
+.profile-information__image>div{
+    position: relative;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: contain;
+    overflow: hidden;
     background-color: var(--mattherhorn-ligther);
+}
+
+.profile-information__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .profile-information__image>figcaption>p:last-of-type{
@@ -324,14 +331,38 @@ nav>ul{
     color: var(--ultimate-grey);
 }
 
+.profile-information__edit-btn{
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    width: 35px;
+    height: 35px;
+    padding: 2.5px;
+    border: 1px solid var(--butternut-squash);
+    border-radius: var(--border-sm);
+    background-color: var(--butternut-squash);
+
+    transition: background-color 0.25s ease;
+}
+
+.profile-information__edit-btn:hover{
+    background-color: var(--butternut-squash-dark);
+}
+
+.profile-information__edit-btn>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 /* button */
 .button-grid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 61px);
     gap: 10px;
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -448,17 +479,6 @@ nav>ul{
     color: var(--dr-white);
 }
 
-
-.form__input{
-    padding: 8px 16px;
-    border: 1px solid var(--mattherhorn);
-    border-radius: var(--border-sm);
-    color: var(--ultimate-grey);
-    font-size: 1.5rem;
-    font-family: 'Nunito', sans-serif;
-    background-color: var(--dire-wolf-dark);
-}
-
 /* Teacher section */
 .courses-table{
     width: 100%;
@@ -566,12 +586,343 @@ nav>ul{
     margin: 0;
 }
 
-/*  */
+.wrapper{
+    display: block;
+    position: fixed;
+    border: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    z-index: 101;
+}
+
+.wrapper--flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    position: relative;
+    padding: 8px 16px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: var(--border-sm);
+    background-color: var(--dire-wolf-dark);
+}
+
+.form__close{
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    border: unset;
+    background-color: transparent;
+}
+
+.form__close:hover{
+    background-color: var(--eclipse);
+}
+
+.form__close>img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.form__preview-image{
+    position: relative;
+    display: block;
+    object-fit: cover;
+    width: 250px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 16px auto 24px;
+    background-color: var(--dire-wolf);
+}
+
+.form__preview-image>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form__edit-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    border: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--dr-white);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+.form__fake-button{
+    cursor: pointer;
+    display: block;
+    padding: 8px 16px;
+    border: 1px solid var(--flood);
+    border-radius: var(--border-sm);
+    color: var(--dr-white);
+    font-size: 1.5rem;
+    background-color: var(--flood);
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.form__fake-button:hover{
+    color: var(--flood);
+    background-color: transparent;
+}
+
+.form__fake-button>input{
+    display: none;
+}
+
+.form__input{
+    width: 100%;
+    position: relative;
+    border: 1px solid var(--eclipse);
+    border-radius: var(--border-sm);
+    margin: 32px 0;
+    color: var(--ultimate-grey);
+    background-color: var(--mattherhorn);
+}
+
+.form__input:hover{ 
+    cursor: text;
+    border: 1px solid var(--ultimate-grey);
+}
+.form__input--focus{
+    outline: 2px solid var(--butternut-squash);
+}
+.form__input--focus>label{
+    color: var(--butternut-squash);
+}
+
+.form__input--half{
+    width: 50%;
+}
+
+.form__input>label{
+    cursor: text;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    display: block;
+    width: fit-content;   
+    background-color: var(--mattherhorn);
+}
+
+.form__input>input:not([type='radio']):not([type='checkbox']){
+    display: block;
+    padding: 10px 16px;
+    border: none;
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--ultimate-grey);
+    background-color: var(--mattherhorn);
+}
+
+.form__input-radios{
+    display: flex;
+    justify-content: space-between;
+    color: var(--ultimate-grey);
+}
+
+.form__radio{
+    position: relative;
+}
+
+.form__radio>div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border: 2px solid var(--ultimate-grey);
+    border-radius: 50%;
+
+    background-color: transparent;
+}
+
+.form__radio>div>span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+
+    transition: background-color 0.25s ease;
+}
+
+.form__radio>input{
+    visibility: hidden;
+}
+
+.form__radio>span{
+    margin-left: 10px;
+}
+
+.form__radio>input:checked ~ div>span{
+    background-color: var(--butternut-squash);
+    opacity: 1;
+}
+.form__radio>input:checked ~ div{
+    border: 2px solid var(--butternut-squash);
+}
+
+.form__label{
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form__label--text-white{
+    color: var(--dr-white);
+}
+
+.form__input-check{
+    display: block;
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.form__input-check>input{
+    visibility: hidden;
+}
+
+.form__input-check>div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--ultimate-grey);
+    border-radius: var(--border-sm);
+    background-color: transparent;
+
+    transition: background-color 0.25s ease;
+}
+
+.form__input-check>input:checked ~ div{
+    border: 2px solid var(--butternut-squash);
+    background-color: var(--butternut-squash);
+}
+
+.form__input-check>span{
+    margin-left: 16px;
+    color: var(--ultimate-grey);
+}
+
+.form__input>input:focus{
+    outline: none;
+    color: var(--dr-white);
+}
+
+.form__placeholder{
+    font-size: 1.4rem;
+    border-radius: var(--border-sm);
+    padding: 0 4px;
+    background-color: var(--mattherhorn);
+}
+
+.form__placeholder--out{
+    animation-name: label-out;
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__placeholder--in{
+    animation-name: label-in;
+    animation-duration: 0.25s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.form__button{
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    padding: 8px 16px;
+    margin: 24px auto;
+    border-radius: var(--border-sm);
+}
+
+.form__button--primary{
+    font-weight: 700;
+    border: 1px solid var(--butternut-squash);
+    color: var(--eclipse);
+    background-color: var(--butternut-squash);
+
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.form__button--primary:hover{
+    color: var(--butternut-squash);
+    background-color: var(--eclipse);
+}
+
+.error{
+    margin-top: -16px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: left;
+    color: var(--butternut-squash);
+}
+
+
+/* displays */
 .inactive{
     display: none;
 }
 
+.flex{
+    display: flex;
+}
+
+.no-overflow{
+    overflow: hidden;
+}
+
 /* Animations */
+@keyframes label-out {
+    0%{
+        transform: translate(0, 0);
+    }
+    100%{
+        transform: translate(-5px, -22px);
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes label-in {
+    0%{
+        transform: translate(-5px, -22px);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
+}
+
 @keyframes container-fade-out-right {
     0%{
         transform: translateX(0);

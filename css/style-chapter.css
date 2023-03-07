@@ -20,6 +20,8 @@
     --dire-wolf:            #2C2428;
     /* for a course card */
     --dire-wolf-dark:       #241d20;
+    /* for messages */
+    --sooty:                #171214ff;
 
 
     /* Borders */
@@ -492,8 +494,77 @@ nav>ul{
     color: var(--ultimate-grey);
 }
 
-.form__star>button>svg{
-    height: 15px;
+.modal{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: var(--border-sm);
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+}
+
+.form{
+    width: 100%;
+    max-width: 350px;
+    padding: 8px 16px;
+    border-radius: var(--border-sm);
+    background-color: var(--dire-wolf-dark);
+}
+
+.form__label{
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1.5rem;
+    font-family: 'Nunito', cursive;
+    color: var(--ultimate-grey);
+}
+
+.form__textarea{
+    padding: 8px 16px;
+    resize: none;
+    border-radius: var(--border-sm);
+    font-family: 'Nunito', cursive;
+    font-size: 1.5rem;
+    color: var(--dr-white);
+    background-color: var(--mattherhorn);
+}
+
+.form__stars{
+    display: flex;
+    gap: 10px;
+}
+
+.form__star{
+    cursor: pointer;
+    width: fit-content;
+    border: none;
+    background-color: var(--dire-wolf-dark);
+}
+
+.form__submit{
+    display: block;
+    margin: 16px 0 16px auto;
+    border: 1px solid var(--butternut-squash);
+    border-radius: var(--border-sm);
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    font-family: 'Nunito', cursive;
+    background-color: var(--butternut-squash);
+}
+
+.form__star:hover>svg>path{
+    transition: stroke 0.25s ease, fill 0.25s ease;
+}
+
+.form__star:hover>svg>path{
+    stroke: var(--butternut-squash);
+    fill: var(--butternut-squash);
 }
 
 @media screen and (min-width: 1000px) {
